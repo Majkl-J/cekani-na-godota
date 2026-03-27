@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cipm3hhi8lknx"]
+
+[ext_resource type="Script" uid="uid://c1nfsk82feb4e" path="res://code/character.gd" id="1_mfum6"]
+[ext_resource type="Texture2D" uid="uid://ddhfry5c2tqn4" path="res://icons/blorbobasic.png" id="2_3sc2b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dc6gq"]
+radius = 22.090721
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfum6"]
+radius = 13.038404
+
+[node name="Blorbo" type="CharacterBody2D" unique_id=1826942773]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_mfum6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1826774376]
+texture = ExtResource("2_3sc2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=641464648]
+shape = SubResource("CircleShape2D_dc6gq")
+
+[node name="Interaction_Door" type="Area2D" parent="." unique_id=1522227928]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Door" unique_id=414333252]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_mfum6")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cy7ntvu0t8jqo"]
+
+[ext_resource type="PackedScene" uid="uid://cpinbrtjm5awd" path="res://singleton.tscn" id="2_td60s"]
+
+[node name="Main" type="Node2D" unique_id=812155091]
+
+[node name="Singleton" parent="." unique_id=1771876261 instance=ExtResource("2_td60s")]

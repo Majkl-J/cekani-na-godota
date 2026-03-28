@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://bvd3j2qlasbo8" path="res://icons/Rio_standing-5.png" id="6_e201i"]
 [ext_resource type="Texture2D" uid="uid://cdmyrkbneavhk" path="res://icons/Rio_walking-6.png" id="7_lgn7g"]
 [ext_resource type="Texture2D" uid="uid://2vyu4v3cuowj" path="res://icons/Rio_walking-7.png" id="8_l1pxy"]
-[ext_resource type="Texture2D" uid="uid://twlfqsas7prm" path="res://icons/Šipka.png" id="14_l1pxy"]
-[ext_resource type="Texture2D" uid="uid://c8iyq5h6dcwvw" path="res://icons/Spacebar.png" id="15_nljke"]
-[ext_resource type="Texture2D" uid="uid://ciep5fm4xrt03" path="res://icons/Kužel_světla_.png" id="14_l1pxy"]
+[ext_resource type="Texture2D" uid="uid://busardvmar6u4" path="res://icons/Šipka.png" id="14_l1pxy"]
+[ext_resource type="Texture2D" uid="uid://ddqjc8r4q35kj" path="res://icons/Spacebar.png" id="15_nljke"]
+[ext_resource type="Texture2D" uid="uid://ciep5fm4xrt03" path="res://icons/Kužel_světla_.png" id="16_oubap"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nljke"]
 animations = [{
@@ -111,11 +111,11 @@ shape = SubResource("CapsuleShape2D_e201i")
 [node name="HintContainer" type="Node2D" parent="." unique_id=481626915]
 
 [node name="LeftHint" type="TextureRect" parent="HintContainer" unique_id=1388130313]
-offset_left = -80.0
+offset_left = -74.5
 offset_top = -20.0
-offset_right = 1968.0
+offset_right = 1973.5
 offset_bottom = 2028.0
-scale = Vector2(0.02, 0.02)
+scale = Vector2(0.015, 0.015)
 texture = ExtResource("14_l1pxy")
 flip_h = true
 
@@ -124,21 +124,30 @@ offset_left = 35.0
 offset_top = -20.0
 offset_right = 2083.0
 offset_bottom = 2028.0
-scale = Vector2(0.02, 0.02)
+scale = Vector2(0.015, 0.015)
 texture = ExtResource("14_l1pxy")
 
 [node name="JumpHint" type="TextureRect" parent="HintContainer" unique_id=246138982]
-offset_left = -27.0
-offset_top = -100.0
-offset_right = 2021.0
-offset_bottom = 1948.0
-scale = Vector2(0.025, 0.025)
+offset_left = -24.5
+offset_top = -88.5
+offset_right = 2023.5
+offset_bottom = 1959.5
+scale = Vector2(0.02, 0.02)
 texture = ExtResource("15_nljke")
+
+[node name="FlashHint" type="TextureRect" parent="HintContainer" unique_id=1264680927]
+offset_left = -75.0
+offset_top = -69.0
+offset_right = 1973.0
+offset_bottom = 1979.0
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("15_nljke")
+
 [node name="FlashlightPivot" type="Node2D" parent="." unique_id=291783483]
 
 [node name="Flashlight" type="PointLight2D" parent="FlashlightPivot" unique_id=1417247687]
 position = Vector2(84.99999, -55.499996)
 scale = Vector2(0.40608722, 0.40608713)
 energy = 1.5
-texture = ExtResource("14_l1pxy")
+texture = ExtResource("16_oubap")
 texture_scale = 0.6

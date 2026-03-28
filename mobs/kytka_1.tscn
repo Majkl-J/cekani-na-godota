@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ba5pduenjl2er"]
+
+[ext_resource type="Script" uid="uid://3fobc0u1um4s" path="res://mobs/kytka_1.gd" id="1_cn0e4"]
+[ext_resource type="Texture2D" uid="uid://crieda5y1md5n" path="res://icons/Kytky-1.png" id="1_dsb53"]
+[ext_resource type="Texture2D" uid="uid://8qomd2pea2oh" path="res://icons/Kytky-2.png" id="2_cn0e4"]
+[ext_resource type="Texture2D" uid="uid://cxs8mfcrjyuqt" path="res://icons/Kytky-3.png" id="3_fvofj"]
+[ext_resource type="Texture2D" uid="uid://cyxgramwqa8vg" path="res://icons/Kytky-4.png" id="4_jthao"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdwi3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dsb53")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cn0e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fvofj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jthao")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dsb53"]
+radius = 4.0
+height = 16.0
+
+[node name="kytka1" type="Node2D" unique_id=1381509044]
+scale = Vector2(3, 3)
+script = ExtResource("1_cn0e4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=950703508]
+position = Vector2(22, 2)
+scale = Vector2(0.03113978, 0.031139774)
+sprite_frames = SubResource("SpriteFrames_mdwi3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1086259412]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1153185260]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_dsb53")

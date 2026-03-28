@@ -8,6 +8,7 @@ func _ready() -> void:
 	plop_down_doors(doors)
 	if not player_plopped:
 		plop_down_player(Vector2(0,0))
+		
 	plop_down_extras()
 	pass # Replace with function body.
 

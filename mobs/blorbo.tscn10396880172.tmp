@@ -60,7 +60,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"walk",
-"speed": 11.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oubap"]

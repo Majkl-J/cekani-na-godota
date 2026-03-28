@@ -2,9 +2,13 @@ class_name Player
 
 extends CharacterBody2D
 
+# Track the last motion
+var last_motion = Vector2.ZERO
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _init() -> void:
 	return
@@ -43,5 +47,25 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	update_animation(direction)
 	move_and_slide()
+
+# Function to update the character's animation based on state
+func update_animation(direction: float) -> void:
+	if direction != 0:
+		animated_sprite_2d.play("walk")
+	else:
+		animated_sprite_2d.play("stand")
+	# otočení postavičky
+	if direction > 0:
+		animated_sprite_2d.flip_h = true
+	elif direction < 0:
+		animated_sprite_2d.flip_h = false
+
+func check_motion_flip() -> void:
+	if last_motion.x < 0:
+		# If moving left, flip the sprite horizontally
+		animated_sprite_2d.flip_h = true
+	elif last_motion.x > 0:
+		# If moving right, reset to the default flip
+		animated_sprite_2d.flip_h = false

@@ -1,5 +1,18 @@
-[gd_scene format=3 uid="uid://br6qcx8xasehm"]
+[gd_scene format=3 uid="uid://d2a221pkhug5g"]
+
+[ext_resource type="Texture2D" uid="uid://cj2c7yddb3bf2" path="res://icons/Bariéry_4.png" id="1_llik4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llik4"]
+size = Vector2(81, 409)
 
 [node name="ActivatedBlocker" type="StaticBody2D" unique_id=1411481531]
+collision_layer = 8
+collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1016658177]
+[node name="Node2D" type="Sprite2D" parent="." unique_id=1016658177]
+texture = ExtResource("1_llik4")
+metadata/id = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1168807050]
+position = Vector2(2.5, 8.5)
+shape = SubResource("RectangleShape2D_llik4")

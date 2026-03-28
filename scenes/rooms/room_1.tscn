@@ -76,6 +76,9 @@ position = Vector2(-8.106232e-06, -8.106232e-06)
 scale = Vector2(0.2678571, 0.26785713)
 texture = ExtResource("7_38fm3")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Room" unique_id=503732223]
+color = Color(0.026220527, 0.17900863, 0.4674787, 1)
+
 [node name="Zamek1" type="Sprite2D" parent="." unique_id=25934277]
 position = Vector2(-1.0000153, -2.5)
 scale = Vector2(0.6010416, 0.6009259)

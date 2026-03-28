@@ -10,7 +10,7 @@ const JUMP_VELOCITY = -400.0
 
 @export var use_mouse_flashlight_aim: bool = true
 @export var flashlight_rotate_speed: float = 2.5
-@export var flashlight_enabled: bool = true
+@export var flashlight_enabled: bool = false
 @onready var flashlight_pivot: Node2D = $FlashlightPivot
 @onready var flashlight: PointLight2D = $FlashlightPivot/Flashlight
 

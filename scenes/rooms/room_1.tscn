@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c2rnql07jii7a"]
 
-[ext_resource type="Texture2D" uid="uid://c668uhpc0lvg5" path="res://icons/room.png" id="1_vu5en"]
 [ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_wodat"]
+[ext_resource type="Texture2D" uid="uid://j48g8dmwayrr" path="res://icons/1.scena 2.png" id="2_fbq1s"]
+[ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="2_hnbyo"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -123.0
@@ -25,8 +26,15 @@ metadata/room_id = 1
 [node name="Room" type="StaticBody2D" parent="." unique_id=1214195482]
 scale = Vector2(2.24, 2.24)
 
-[node name="Sprite2D" type="Sprite2D" parent="Room" unique_id=1772104089]
-texture = ExtResource("1_vu5en")
+[node name="pozadí" type="Sprite2D" parent="Room" unique_id=162837163]
+position = Vector2(0.446417, -0.4464317)
+scale = Vector2(0.2678571, 0.26785716)
+texture = ExtResource("2_fbq1s")
+
+[node name="rámeček" type="Sprite2D" parent="Room" unique_id=1772104089]
+position = Vector2(-1.7166138e-05, -0.44642353)
+scale = Vector2(0.13369605, 0.13351521)
+texture = ExtResource("2_hnbyo")
 
 [node name="Bottom" type="CollisionShape2D" parent="Room" unique_id=1847986363]
 shape = SubResource("WorldBoundaryShape2D_td60s")

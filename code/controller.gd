@@ -18,6 +18,11 @@ var preloaded_beem: Resource = preload("res://scenes/beam_poly.tscn")
 func get_beem_resource() -> Resource:
 	return preloaded_beem
 
+var preloaded_emitter: Resource = preload("res://scenes/beam_emitter.tscn")
+
+func get_emitter_resource() -> Resource:
+	return preloaded_emitter
+
 # this is a mistake
 static var max_len: float = 270
 func get_max_len():

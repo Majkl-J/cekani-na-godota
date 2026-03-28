@@ -11,11 +11,7 @@ const JUMP_VELOCITY = -400.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _init() -> void:
-	return
-
-func _process(delta: float) -> void:
-	
-	return
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:

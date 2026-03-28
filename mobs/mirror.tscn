@@ -7,11 +7,17 @@
 a = Vector2(0, -29)
 b = Vector2(0, 32)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2tw1"]
+radius = 12.0
+height = 72.0
+
 [node name="Mirror" type="StaticBody2D" unique_id=1253096485]
-collision_layer = 8
+collision_layer = 24
 collision_mask = 0
 script = ExtResource("1_u2tw1")
 metadata/_custom_type_script = "uid://dbq0po6vl1ju8"
+metadata/upper_limit = 90.0
+metadata/lower_limit = -90.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=580032227]
 shape = SubResource("SegmentShape2D_km8ef")
@@ -22,3 +28,6 @@ texture = ExtResource("2_ssj6h")
 
 [node name="Normal" type="Marker2D" parent="." unique_id=642599669]
 position = Vector2(1, 0)
+
+[node name="CollisonInteraction" type="CollisionShape2D" parent="." unique_id=356478898]
+shape = SubResource("CapsuleShape2D_u2tw1")

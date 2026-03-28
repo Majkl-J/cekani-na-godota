@@ -8,6 +8,7 @@ var mirror_on = preload("res://icons/light/mirror_lit.png")
 
 var reflecting: bool = false
 var hit_reflect: bool = true
+const ROTATE_RATE = 29
 
 func get_reflecting():
 	return reflecting
@@ -35,11 +36,15 @@ func _process(delta: float) -> void:
 		remove_emitters()
 	hit_reflect = false
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.pressed:
-			if Input.is_action_just_pressed("test_a"):
-				rotate(0.1);
-			if Input.is_action_just_pressed("test_b"):
-				rotate(-0.1);;
+# This bitch is losing it awawaw :3
+func rotate_this_fuck(dir: int, delta: float):
+	rotation_degrees = clampf(rotation_degrees + (dir * ROTATE_RATE * delta), get_meta("lower_limit"), get_meta("upper_limit"))
+
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event is InputEventKey:
+		#if event.pressed:
+			#if Input.is_action_just_pressed("test_a"):
+				#rotate(0.1);
+			#if Input.is_action_just_pressed("test_b"):
+				#rotate(-0.1);;
 	

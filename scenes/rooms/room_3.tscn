@@ -1,6 +1,66 @@
 [gd_scene format=3 uid="uid://cqtj4cg7tyr0t"]
 
-[ext_resource type="PackedScene" uid="uid://c2rnql07jii7a" path="res://scenes/rooms/room_1.tscn" id="1_etvqs"]
+[ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_g5ssp"]
+[ext_resource type="Texture2D" uid="uid://j48g8dmwayrr" path="res://icons/1.scena 2.png" id="2_ahsqd"]
+[ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="3_hfp1j"]
+[ext_resource type="PackedScene" uid="uid://36xkowmvw4db" path="res://mobs/mirror.tscn" id="4_hfp1j"]
+[ext_resource type="PackedScene" uid="uid://tvr7dlxowya7" path="res://scenes/beam_emitter.tscn" id="5_d8ufh"]
 
-[node name="Room3" unique_id=45653194 instance=ExtResource("1_etvqs")]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
+distance = -123.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_007yp"]
+normal = Vector2(0.99999803, 0.001996004)
+distance = -254.09999
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dc6gq"]
+normal = Vector2(-0.99997, -0.007751705)
+distance = -256.56412
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cg05x"]
+normal = Vector2(-0.00462958, 0.99998933)
+distance = -126.78639
+
+[node name="Room3" type="Node2D" unique_id=45653194]
+script = ExtResource("1_g5ssp")
 metadata/room_id = 3
+
+[node name="Room" type="StaticBody2D" parent="." unique_id=1214195482]
+scale = Vector2(2.24, 2.24)
+
+[node name="pozadí" type="Sprite2D" parent="Room" unique_id=162837163]
+position = Vector2(0.446417, -0.4464317)
+scale = Vector2(0.2678571, 0.26785716)
+texture = ExtResource("2_ahsqd")
+
+[node name="rámeček" type="Sprite2D" parent="Room" unique_id=1772104089]
+position = Vector2(-1.7166138e-05, -0.44642353)
+scale = Vector2(0.13369605, 0.13351521)
+texture = ExtResource("3_hfp1j")
+
+[node name="Bottom" type="CollisionShape2D" parent="Room" unique_id=1847986363]
+shape = SubResource("WorldBoundaryShape2D_td60s")
+
+[node name="Left" type="CollisionShape2D" parent="Room" unique_id=1894842400]
+shape = SubResource("WorldBoundaryShape2D_007yp")
+
+[node name="Right" type="CollisionShape2D" parent="Room" unique_id=1625157776]
+shape = SubResource("WorldBoundaryShape2D_dc6gq")
+
+[node name="Top" type="CollisionShape2D" parent="Room" unique_id=212725909]
+shape = SubResource("WorldBoundaryShape2D_cg05x")
+
+[node name="RoomCamera" type="Camera2D" parent="Room" unique_id=950895562]
+scale = Vector2(0.44642857, 0.44642857)
+
+[node name="Mirror" parent="." unique_id=1253096485 instance=ExtResource("4_hfp1j")]
+position = Vector2(-285, -3)
+
+[node name="Beam_Emitter" parent="." unique_id=196632771 instance=ExtResource("5_d8ufh")]
+position = Vector2(-518, -229)
+
+[node name="Mirror2" parent="." unique_id=1559354088 instance=ExtResource("4_hfp1j")]
+position = Vector2(-138, -230)
+
+[node name="Mirror3" parent="." unique_id=996482980 instance=ExtResource("4_hfp1j")]
+position = Vector2(440, -79)

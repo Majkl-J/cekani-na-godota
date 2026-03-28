@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://tvr7dlxowya7"]
+
+[ext_resource type="Script" uid="uid://d1a7ap0dkxi5p" path="res://code/lights/beam_emitter.gd" id="1_j0hqs"]
+[ext_resource type="Script" uid="uid://b1ekh5b0hy5vw" path="res://code/lights/beam.gd" id="2_yjyoh"]
+
+[node name="Beam_Emitter" type="Node2D" unique_id=196632771]
+script = ExtResource("1_j0hqs")
+
+[node name="RayCast" type="RayCast2D" parent="." unique_id=877670642]
+target_position = Vector2(2000, 0)
+collision_mask = 9
+
+[node name="Beam" type="Node2D" parent="." unique_id=278617402]
+position = Vector2(1, 0)
+script = ExtResource("2_yjyoh")

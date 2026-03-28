@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d78o1k5ty0j0"]
 
-[ext_resource type="Script" uid="uid://bhiuwxsa3rgdi" path="res://code/polygon_2d.gd" id="1_e5pmx"]
+[ext_resource type="Script" uid="uid://bhiuwxsa3rgdi" path="res://code/lights/beam_poly.gd" id="1_aw4a0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6a8el"]
 load_path = "res://.godot/imported/beam_conv.png-16452c398f9f06df44f0f1efe37bb262.ctex"
 
 [node name="BeamPoly" type="Polygon2D" unique_id=1384251498]
 texture = SubResource("CompressedTexture2D_6a8el")
-polygon = PackedVector2Array(0, -30, 0, 40, 270, 40, 270, -30)
+polygon = PackedVector2Array(0, -10, 0, 10, 270, 10, 270, -10)
 uv = PackedVector2Array(-6, 1, -6, 371, 1420, 371, 1420, 1)
-script = ExtResource("1_e5pmx")
+script = ExtResource("1_aw4a0")

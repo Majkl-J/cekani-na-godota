@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://36xkowmvw4db"]
+
+[ext_resource type="Script" uid="uid://cs617oiwt05w3" path="res://code/lights/mirror.gd" id="1_u2tw1"]
+[ext_resource type="Texture2D" uid="uid://dk5eiri4apfx7" path="res://icons/light/mirror_dim.png" id="2_ssj6h"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_km8ef"]
+a = Vector2(0, -29)
+b = Vector2(0, 32)
+
+[node name="Mirror" type="StaticBody2D" unique_id=1253096485]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_u2tw1")
+metadata/_custom_type_script = "uid://dbq0po6vl1ju8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=580032227]
+shape = SubResource("SegmentShape2D_km8ef")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=418177573]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ssj6h")
+
+[node name="Normal" type="Marker2D" parent="." unique_id=642599669]
+position = Vector2(1, 0)

@@ -10,14 +10,8 @@ var current_length: float = 270
 func set_current_length(new_length: float = 0):
 	set_length(new_length)
 	current_length = new_length
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.pressed:
-			if Input.is_action_just_pressed("test_a"):
-				set_current_length(max(0, current_length - 10));
-			if Input.is_action_just_pressed("test_b"):
-				set_current_length(max(0, current_length + 10));
+func get_current_length():
+	return current_length
 
 # Look at this disgusting thing
 func set_length(set_len: float):
@@ -40,19 +34,27 @@ func set_length(set_len: float):
 	# Adjust beem
 	var beem_count = ceil(set_len / max_len)
 	# :33333333333333 This is trash
+	var hit_pos = -1
 	for i in range(max(beem_count, len(beam_polys))):
-		var b: BeemPoly = get_child(i)
-		if(b == null && i <= beem_count):
+		var b: BeemPoly
+		if hit_pos != -1:
+			b = get_child(hit_pos)
+		else:
+			b = get_child(i)
+		if(b == null && i+1 <= beem_count):
 			if(i+1 == beem_count):
 				summon_beem(default_beem, fmod(set_len, max_len), max_len * i+1)
 			else:
 				summon_beem(default_beem, max_len, max_len * i+1)
 			continue
-		if(i+1 > beem_count):
+		if(i >= beem_count):
+			if hit_pos == -1:
+				hit_pos = i
 			remove_child(b)
 			b.queue_free()
 			continue
-		if(i+1 == beem_count && fmod(set_len, max_len) < max_len):
+		var stupid_fucking_check = fmod(set_len, max_len)
+		if(i+1 == beem_count && stupid_fucking_check < max_len && stupid_fucking_check != 0):
 			b.set_length(fmod(set_len, max_len))
 			continue
 		b.set_length(max_len)

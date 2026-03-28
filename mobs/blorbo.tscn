@@ -97,7 +97,7 @@ shape = SubResource("RectangleShape2D_oubap")
 
 [node name="Interaction" type="Area2D" parent="." unique_id=1522227928]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=414333252]
 position = Vector2(-1, -12)

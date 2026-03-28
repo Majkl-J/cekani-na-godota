@@ -19,7 +19,9 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if event.pressed and Input.is_action_just_pressed("open"):
+		if not event.pressed:
+			return
+		if Input.is_action_just_pressed("open"):
 			tryOpenDoor();
 	return
 
@@ -55,8 +57,8 @@ func default_phys(delta: float) -> void:
 
 # No documentation. Figure it out~ :3c
 func space_phys(delta: float):
-	var slowdown = SPEED * 0.1
-	var accell = SPEED * 0.2
+	var slowdown = SPEED * 0.3
+	var accell = SPEED * 0.6
 	# Lazyyyy qwq
 	var direction_x := Input.get_axis("ui_left", "ui_right")
 	var direction_y := Input.get_axis("ui_up", "ui_down")

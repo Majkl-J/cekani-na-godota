@@ -13,6 +13,16 @@ var preloaded_door: Resource = preload("res://mobs/door.tscn")
 func get_door_resource() -> Resource:
 	return preloaded_door
 
+var preloaded_beem: Resource = preload("res://scenes/beam_poly.tscn")
+
+func get_beem_resource() -> Resource:
+	return preloaded_beem
+
+# this is a mistake
+static var max_len: float = 270
+func get_max_len():
+	return max_len
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_level(first_level)

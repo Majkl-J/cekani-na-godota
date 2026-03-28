@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://b1ekh5b0hy5vw" path="res://code/lights/beam.gd" id="2_yjyoh"]
 
 [node name="Beam_Emitter" type="Node2D" unique_id=196632771]
+z_index = 9
+z_as_relative = false
 script = ExtResource("1_j0hqs")
 
 [node name="RayCast" type="RayCast2D" parent="." unique_id=877670642]

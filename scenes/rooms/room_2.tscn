@@ -1,50 +1,105 @@
 [gd_scene format=3 uid="uid://csc41evixocf3"]
 
-[ext_resource type="PackedScene" uid="uid://c2rnql07jii7a" path="res://scenes/rooms/room_1.tscn" id="1_6a8el"]
+[ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_ix842"]
 [ext_resource type="Texture2D" uid="uid://dfia1n2x4j5lx" path="res://icons/2.scena.png" id="2_km8ef"]
 [ext_resource type="Texture2D" uid="uid://cagarhvj36yvy" path="res://icons/Kytky foreground.png" id="3_0hwry"]
 [ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="3_sbn3u"]
 [ext_resource type="PackedScene" uid="uid://ba5pduenjl2er" path="res://mobs/kytka_1.tscn" id="4_0hwry"]
-[ext_resource type="PackedScene" uid="uid://4keleg87n27t" path="res://mobs/kytka_2.tscn" id="6_0hwry"]
-[ext_resource type="PackedScene" uid="uid://nr0ptd30gxi5" path="res://mobs/kytka_3.tscn" id="7_tjvhs"]
-[ext_resource type="PackedScene" uid="uid://mfied50h4o65" path="res://mobs/kytka_4.tscn" id="8_np14n"]
+[ext_resource type="Texture2D" uid="uid://bf2klqttagicr" path="res://icons/Skříňka.png" id="5_urnam"]
+[ext_resource type="PackedScene" path="res://mobs/kytka_2.tscn" id="6_0hwry"]
+[ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="6_kxor6"]
+[ext_resource type="PackedScene" path="res://mobs/kytka_3.tscn" id="7_tjvhs"]
+[ext_resource type="PackedScene" path="res://mobs/kytka_4.tscn" id="8_np14n"]
 [ext_resource type="Texture2D" uid="uid://bi1cehoryrylx" path="res://icons/Zamek2.png" id="10_q734l"]
-[ext_resource type="Script" uid="uid://s6i1avf30uxj" path="res://scenes/rooms/kytky.gd" id="10_sbn3u"]
+[ext_resource type="Script" path="res://scenes/rooms/kytky.gd" id="10_sbn3u"]
 
-[node name="Room2" unique_id=45653194 instance=ExtResource("1_6a8el")]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
+distance = -100.44643
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_007yp"]
+normal = Vector2(0.99999803, 0.001996004)
+distance = -254.09999
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dc6gq"]
+normal = Vector2(-0.99997, -0.007751705)
+distance = -256.56412
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cg05x"]
+normal = Vector2(-0.00462958, 0.99998933)
+distance = -126.78639
+
+[node name="Room2" type="Node2D" unique_id=45653194]
+script = ExtResource("1_ix842")
 metadata/room_id = 2
 
-[node name="pozadí" parent="Room" parent_id_path=PackedInt32Array(1214195482) index="0" unique_id=162837163]
+[node name="Room" type="StaticBody2D" parent="." unique_id=1214195482]
+scale = Vector2(2.24, 2.24)
+
+[node name="pozadí" type="Sprite2D" parent="Room" unique_id=162837163]
+position = Vector2(0.446417, -0.4464317)
+scale = Vector2(0.2678571, 0.26785716)
 texture = ExtResource("2_km8ef")
 
-[node name="chodnik" type="Sprite2D" parent="Room" parent_id_path=PackedInt32Array(1214195482) index="1" unique_id=787576506]
+[node name="chodnik" type="Sprite2D" parent="Room" unique_id=787576506]
 position = Vector2(4.7630497e-06, -5.9870736e-06)
 scale = Vector2(0.26785722, 0.26785716)
 texture = ExtResource("3_sbn3u")
 
-[node name="kytky obrys" type="Sprite2D" parent="Room" parent_id_path=PackedInt32Array(1214195482) index="2" unique_id=1874435222]
+[node name="kytky obrys" type="Sprite2D" parent="Room" unique_id=1874435222]
 position = Vector2(0.44643086, 0.2232086)
 scale = Vector2(0.26785713, 0.26827046)
 texture = ExtResource("3_0hwry")
 
-[node name="kytka1" parent="." index="1" unique_id=1381509044 instance=ExtResource("4_0hwry")]
+[node name="skříňka" type="Sprite2D" parent="Room" unique_id=358661889]
+position = Vector2(0.22320169, -1.5616417e-05)
+scale = Vector2(0.26808965, 0.26785713)
+texture = ExtResource("5_urnam")
+
+[node name="chodník" type="Sprite2D" parent="Room" unique_id=1089819757]
+position = Vector2(1.66893e-06, -1.9073486e-06)
+scale = Vector2(0.26739213, 0.26785713)
+texture = ExtResource("3_sbn3u")
+
+[node name="rámeček" type="Sprite2D" parent="Room" unique_id=1772104089]
+position = Vector2(-1.7166138e-05, -0.44642353)
+scale = Vector2(0.13369605, 0.13351521)
+texture = ExtResource("6_kxor6")
+
+[node name="Bottom" type="CollisionShape2D" parent="Room" unique_id=1847986363]
+shape = SubResource("WorldBoundaryShape2D_td60s")
+
+[node name="Left" type="CollisionShape2D" parent="Room" unique_id=1894842400]
+shape = SubResource("WorldBoundaryShape2D_007yp")
+
+[node name="Right" type="CollisionShape2D" parent="Room" unique_id=1625157776]
+shape = SubResource("WorldBoundaryShape2D_dc6gq")
+
+[node name="Top" type="CollisionShape2D" parent="Room" unique_id=212725909]
+shape = SubResource("WorldBoundaryShape2D_cg05x")
+
+[node name="RoomCamera" type="Camera2D" parent="Room" unique_id=950895562]
+scale = Vector2(0.44642857, 0.44642857)
+
+[node name="kytka1" parent="." unique_id=1381509044 instance=ExtResource("4_0hwry")]
 position = Vector2(-293.00003, 65.000015)
 scale = Vector2(20, 20)
 
-[node name="kytka2" parent="." index="2" unique_id=500411564 instance=ExtResource("6_0hwry")]
+[node name="kytka2" parent="." unique_id=500411564 instance=ExtResource("6_0hwry")]
 position = Vector2(-102, 101)
 scale = Vector2(14, 14)
 
-[node name="kytka3" parent="." index="3" unique_id=1138438335 instance=ExtResource("7_tjvhs")]
+[node name="kytka3" parent="." unique_id=1138438335 instance=ExtResource("7_tjvhs")]
 position = Vector2(164, 76)
 scale = Vector2(17, 17)
 
-[node name="kytka4" parent="." index="4" unique_id=1551364667 instance=ExtResource("8_np14n")]
+[node name="kytka4" parent="." unique_id=1551364667 instance=ExtResource("8_np14n")]
 position = Vector2(358, 103)
 scale = Vector2(15, 15)
 
-[node name="FlowerPuzzle" type="Node" parent="." index="5" unique_id=795790881]
+[node name="FlowerPuzzle" type="Node" parent="." unique_id=795790881]
 script = ExtResource("10_sbn3u")
 
-[node name="Zamek1" parent="." index="6" unique_id=25934277]
+[node name="Zamek1" type="Sprite2D" parent="." unique_id=25934277]
+position = Vector2(-1.0000153, -2.5)
+scale = Vector2(0.6010416, 0.6009259)
 texture = ExtResource("10_q734l")

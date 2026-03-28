@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cfytbtm8r72ds"]
 
 [ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_g5ssp"]
-[ext_resource type="Texture2D" uid="uid://j48g8dmwayrr" path="res://icons/1.scena 2.png" id="2_ahsqd"]
+[ext_resource type="Texture2D" uid="uid://425oqn07uhr6" path="res://icons/3.scena.png" id="2_hfp1j"]
 [ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="3_hfp1j"]
 [ext_resource type="PackedScene" uid="uid://36xkowmvw4db" path="res://mobs/mirror.tscn" id="4_hfp1j"]
 [ext_resource type="PackedScene" uid="uid://tvr7dlxowya7" path="res://scenes/beam_emitter.tscn" id="5_d8ufh"]
+[ext_resource type="PackedScene" uid="uid://cnhxkm3u3len7" path="res://mobs/star.tscn" id="6_d8ufh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -123.0
@@ -31,7 +32,7 @@ scale = Vector2(2.24, 2.24)
 [node name="pozadí" type="Sprite2D" parent="Room" unique_id=162837163]
 position = Vector2(0.446417, -0.4464317)
 scale = Vector2(0.2678571, 0.26785716)
-texture = ExtResource("2_ahsqd")
+texture = ExtResource("2_hfp1j")
 
 [node name="rámeček" type="Sprite2D" parent="Room" unique_id=1772104089]
 position = Vector2(-1.7166138e-05, -0.44642353)
@@ -54,10 +55,13 @@ shape = SubResource("WorldBoundaryShape2D_cg05x")
 scale = Vector2(0.44642857, 0.44642857)
 
 [node name="Beam_Emitter" parent="." unique_id=196632771 instance=ExtResource("5_d8ufh")]
-position = Vector2(-518, -229)
+position = Vector2(-500, -229)
 
 [node name="Mirror" parent="." unique_id=1559354088 instance=ExtResource("4_hfp1j")]
 position = Vector2(-138, -230)
-rotation = 3.1415927
+rotation = 2.5132742
 metadata/upper_limit = 180.0
 metadata/lower_limit = 90.0
+
+[node name="Star" parent="." unique_id=1563425556 instance=ExtResource("6_d8ufh")]
+position = Vector2(-252, 94)

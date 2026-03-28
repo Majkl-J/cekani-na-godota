@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://br6qcx8xasehm"]
+
+[node name="ActivatedBlocker" type="StaticBody2D" unique_id=1411481531]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1016658177]

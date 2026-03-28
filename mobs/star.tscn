@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cnhxkm3u3len7"]
+
+[ext_resource type="Script" uid="uid://cy82uvly5h87b" path="res://code/lights/star.gd" id="1_e1okv"]
+[ext_resource type="Texture2D" uid="uid://3r6u6drygwnh" path="res://icons/Hvězda_-2.png" id="2_lo80x"]
+[ext_resource type="Texture2D" uid="uid://c34tbi5bnxhiq" path="res://icons/Hvězda_-3.png" id="3_a4ybb"]
+[ext_resource type="Texture2D" uid="uid://c8ctwxyp2en7u" path="res://icons/Hvězda_-4.png" id="4_y2wss"]
+[ext_resource type="Texture2D" uid="uid://c2wyw0j8t63y1" path="res://icons/Hvězda_-5.png" id="5_b64yx"]
+[ext_resource type="Texture2D" uid="uid://2ykuifc38yd6" path="res://icons/Hvězda_-6.png" id="6_mcfwm"]
+[ext_resource type="Texture2D" uid="uid://pq01r0tsmwny" path="res://icons/Hvězda_-7.png" id="7_pv2ov"]
+[ext_resource type="Texture2D" uid="uid://c6q7rswb4plfi" path="res://icons/Hvězda_-8.png" id="8_v6b0g"]
+[ext_resource type="Texture2D" uid="uid://cyu071ramvgtv" path="res://icons/Hvězda_-9.png" id="9_rkwpg"]
+[ext_resource type="Texture2D" uid="uid://dd2jwjty0em7x" path="res://icons/Hvězda_-10.png" id="10_w84fg"]
+[ext_resource type="Texture2D" uid="uid://c85ij6ht2k4fs" path="res://icons/Hvězda_-1.png" id="11_4w74o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nv8xm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lo80x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a4ybb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y2wss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b64yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mcfwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pv2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v6b0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rkwpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w84fg")
+}],
+"loop": true,
+"name": &"powered",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_4w74o")
+}],
+"loop": true,
+"name": &"unpowered",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wineq"]
+radius = 56.0
+
+[node name="Star" type="StaticBody2D" unique_id=1563425556]
+z_index = 10
+scale = Vector2(0.245, 0.245)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_e1okv")
+metadata/_custom_type_script = "uid://dbq0po6vl1ju8"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=645147876]
+sprite_frames = SubResource("SpriteFrames_nv8xm")
+animation = &"powered"
+frame_progress = 0.39366478
+offset = Vector2(29, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620351255]
+shape = SubResource("CircleShape2D_wineq")
+metadata/linked_object_id = 0

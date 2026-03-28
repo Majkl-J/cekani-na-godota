@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c2rnql07jii7a" path="res://scenes/rooms/room_1.tscn" id="1_6a8el"]
 [ext_resource type="Texture2D" uid="uid://dfia1n2x4j5lx" path="res://icons/2.scena.png" id="2_km8ef"]
 [ext_resource type="Texture2D" uid="uid://cagarhvj36yvy" path="res://icons/Kytky foreground.png" id="3_0hwry"]
+[ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="3_sbn3u"]
 [ext_resource type="PackedScene" uid="uid://ba5pduenjl2er" path="res://mobs/kytka_1.tscn" id="4_0hwry"]
 [ext_resource type="Script" uid="uid://b1y03sysv6s3x" path="res://mobs/kytka_2.gd" id="5_nu3hr"]
 [ext_resource type="Script" uid="uid://yvl4hk2pslyl" path="res://mobs/kytka_3.gd" id="6_tjvhs"]
@@ -14,26 +15,31 @@ metadata/room_id = 2
 [node name="pozadí" parent="Room" parent_id_path=PackedInt32Array(1214195482) index="0" unique_id=162837163]
 texture = ExtResource("2_km8ef")
 
-[node name="Sprite2D" type="Sprite2D" parent="Room" parent_id_path=PackedInt32Array(1214195482) index="1" unique_id=1874435222]
+[node name="chodnik" type="Sprite2D" parent="Room" parent_id_path=PackedInt32Array(1214195482) index="1" unique_id=787576506]
+position = Vector2(4.7630497e-06, -5.9870736e-06)
+scale = Vector2(0.26785722, 0.26785716)
+texture = ExtResource("3_sbn3u")
+
+[node name="kytky obrys" type="Sprite2D" parent="Room" parent_id_path=PackedInt32Array(1214195482) index="2" unique_id=1874435222]
 position = Vector2(0.44643086, 0.2232086)
 scale = Vector2(0.26785713, 0.26827046)
 texture = ExtResource("3_0hwry")
 
 [node name="kytka1" parent="." index="1" unique_id=1381509044 instance=ExtResource("4_0hwry")]
-position = Vector2(-261, 159)
-scale = Vector2(10, 10)
+position = Vector2(-293.00003, 65.000015)
+scale = Vector2(20, 20)
 
 [node name="kytka2" parent="." index="2" unique_id=514833315 instance=ExtResource("4_0hwry")]
-position = Vector2(-86.00001, 161)
-scale = Vector2(10, 10)
+position = Vector2(-102.00001, 101)
+scale = Vector2(14, 14)
 script = ExtResource("5_nu3hr")
 
 [node name="kytka3" parent="." index="3" unique_id=347986742 instance=ExtResource("4_0hwry")]
-position = Vector2(95, 165)
-scale = Vector2(10, 10)
+position = Vector2(164, 76)
+scale = Vector2(17, 17)
 script = ExtResource("6_tjvhs")
 
 [node name="kytka4" parent="." index="4" unique_id=2048434725 instance=ExtResource("4_0hwry")]
-position = Vector2(288, 154.00002)
-scale = Vector2(10, 10)
+position = Vector2(358, 103.000015)
+scale = Vector2(15, 15)
 script = ExtResource("7_np14n")

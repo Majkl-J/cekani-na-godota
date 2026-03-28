@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://c2rnql07jii7a"]
 
 [ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_wodat"]
-[ext_resource type="Texture2D" uid="uid://j48g8dmwayrr" path="res://icons/1.scena 2.png" id="2_fbq1s"]
+[ext_resource type="Texture2D" uid="uid://cqh83btjajpul" path="res://icons/ 1.scena new.png" id="2_aq8op"]
 [ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="2_hnbyo"]
+[ext_resource type="Texture2D" uid="uid://bf2klqttagicr" path="res://icons/Skříňka.png" id="3_y5lrh"]
+[ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="4_ow1e4"]
+[ext_resource type="Texture2D" uid="uid://cb2l8u055g6uj" path="res://icons/Hodiny.png" id="6_wtcj1"]
+[ext_resource type="Texture2D" uid="uid://dmfcr2xt3olbv" path="res://icons/Budík.png" id="7_38fm3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
-distance = -123.0
+distance = -100.44643
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_007yp"]
 normal = Vector2(0.99999803, 0.001996004)
@@ -29,7 +33,17 @@ scale = Vector2(2.24, 2.24)
 [node name="pozadí" type="Sprite2D" parent="Room" unique_id=162837163]
 position = Vector2(0.446417, -0.4464317)
 scale = Vector2(0.2678571, 0.26785716)
-texture = ExtResource("2_fbq1s")
+texture = ExtResource("2_aq8op")
+
+[node name="skříňka" type="Sprite2D" parent="Room" unique_id=358661889]
+position = Vector2(0.22320169, -1.5616417e-05)
+scale = Vector2(0.26808965, 0.26785713)
+texture = ExtResource("3_y5lrh")
+
+[node name="chodník" type="Sprite2D" parent="Room" unique_id=1089819757]
+position = Vector2(1.66893e-06, -1.9073486e-06)
+scale = Vector2(0.26739213, 0.26785713)
+texture = ExtResource("4_ow1e4")
 
 [node name="rámeček" type="Sprite2D" parent="Room" unique_id=1772104089]
 position = Vector2(-1.7166138e-05, -0.44642353)
@@ -50,3 +64,13 @@ shape = SubResource("WorldBoundaryShape2D_cg05x")
 
 [node name="RoomCamera" type="Camera2D" parent="Room" unique_id=950895562]
 scale = Vector2(0.44642857, 0.44642857)
+
+[node name="hodiny off" type="Sprite2D" parent="Room" unique_id=1092385139]
+position = Vector2(-0.22326231, -0.2232213)
+scale = Vector2(0.26762468, 0.26744378)
+texture = ExtResource("6_wtcj1")
+
+[node name="budík" type="Sprite2D" parent="Room" unique_id=1648163973]
+position = Vector2(-8.106232e-06, -8.106232e-06)
+scale = Vector2(0.2678571, 0.26785713)
+texture = ExtResource("7_38fm3")

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://4keleg87n27t" path="res://mobs/kytka_2.tscn" id="6_0hwry"]
 [ext_resource type="PackedScene" uid="uid://nr0ptd30gxi5" path="res://mobs/kytka_3.tscn" id="7_tjvhs"]
 [ext_resource type="PackedScene" uid="uid://mfied50h4o65" path="res://mobs/kytka_4.tscn" id="8_np14n"]
+[ext_resource type="Texture2D" uid="uid://bi1cehoryrylx" path="res://icons/Zamek2.png" id="10_q734l"]
 [ext_resource type="Script" uid="uid://s6i1avf30uxj" path="res://scenes/rooms/kytky.gd" id="10_sbn3u"]
 
 [node name="Room2" unique_id=45653194 instance=ExtResource("1_6a8el")]
@@ -44,3 +45,6 @@ scale = Vector2(15, 15)
 
 [node name="FlowerPuzzle" type="Node" parent="." index="5" unique_id=795790881]
 script = ExtResource("10_sbn3u")
+
+[node name="Zamek1" parent="." index="6" unique_id=25934277]
+texture = ExtResource("10_q734l")

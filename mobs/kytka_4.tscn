@@ -12,7 +12,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_6bfqv")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -26,7 +26,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_esshk")
 }],
-"loop": true,
+"loop": false,
 "name": &"good",
 "speed": 5.0
 }, {
@@ -52,7 +52,7 @@ flower_id = 4
 position = Vector2(21.999998, 1.9999999)
 scale = Vector2(0.031139778, 0.031139772)
 sprite_frames = SubResource("SpriteFrames_rbude")
-animation = &"open"
+animation = &"good"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1086259412]
 collision_layer = 0

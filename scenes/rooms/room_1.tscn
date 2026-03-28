@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="4_ow1e4"]
 [ext_resource type="Texture2D" uid="uid://cb2l8u055g6uj" path="res://icons/Hodiny.png" id="6_wtcj1"]
 [ext_resource type="Texture2D" uid="uid://dmfcr2xt3olbv" path="res://icons/Budík.png" id="7_38fm3"]
+[ext_resource type="Texture2D" uid="uid://cwu3ou38kto4y" path="res://icons/Zamek1.png" id="8_y5lrh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -100.44643
@@ -74,3 +75,8 @@ texture = ExtResource("6_wtcj1")
 position = Vector2(-8.106232e-06, -8.106232e-06)
 scale = Vector2(0.2678571, 0.26785713)
 texture = ExtResource("7_38fm3")
+
+[node name="Zamek1" type="Sprite2D" parent="." unique_id=25934277]
+position = Vector2(-1.0000153, -2.5)
+scale = Vector2(0.6010416, 0.6009259)
+texture = ExtResource("8_y5lrh")

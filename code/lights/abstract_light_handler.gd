@@ -14,6 +14,7 @@ func add_emitter(new_rotation: float, light_source: BeemEmitter):
 	var emitter: BeemEmitter = $"/root/controller".get_emitter_resource().instantiate()
 	add_child(emitter)
 	emitter.rotation = new_rotation
+	emitter.add_exception(self)
 	emitters[light_source] = emitter
 	return
 	

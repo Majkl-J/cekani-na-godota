@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cwktymassdx0i" path="res://code/door.gd" id="1_cj6pm"]
 [ext_resource type="Texture2D" uid="uid://d3ock4iytfuy3" path="res://icons/Obraz.png" id="2_cj6pm"]
+[ext_resource type="Script" uid="uid://dbq0po6vl1ju8" path="res://code/lights/abstract_light_handler.gd" id="3_ftg83"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhekj"]
-size = Vector2(69.333336, 57)
+size = Vector2(69.333336, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj6pm"]
+size = Vector2(66.333336, 44.666668)
 
 [node name="Door" type="StaticBody2D" unique_id=479751859]
 scale = Vector2(3, 3)
@@ -19,5 +23,15 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_cj6pm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=327344792]
-position = Vector2(0.33333015, -23.166668)
+position = Vector2(1.9999969, -0.6666667)
 shape = SubResource("RectangleShape2D_xhekj")
+
+[node name="LightBlocker" type="StaticBody2D" parent="." unique_id=419071453]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_ftg83")
+metadata/_custom_type_script = "uid://dbq0po6vl1ju8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightBlocker" unique_id=477335587]
+position = Vector2(0.5, -28)
+shape = SubResource("RectangleShape2D_cj6pm")

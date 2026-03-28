@@ -9,6 +9,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+# Nápověda
+@onready var left_hint = $HintContainer/LeftHint
+@onready var right_hint = $HintContainer/RightHint
+@onready var jump_hint = $HintContainer/JumpHint
 
 var is_in_space = false
 
@@ -16,6 +20,28 @@ func _ready() -> void:
 	# Fuck you, no time. Hardcoding :333
 	var current_room: Scene = $"/root/controller".get_main_node()
 	is_in_space = current_room.get_meta("room_id") == 3
+		# Nápověda
+	if left_hint != null:
+		left_hint.visible = not $"/root/controller".used_left_hint
+	if right_hint != null:
+		right_hint.visible = not $"/root/controller".used_right_hint
+	if jump_hint != null:
+		jump_hint.visible = not $"/root/controller".used_jump_hint
+
+func _process(delta: float) -> void:
+	# Pro nápovědu na začátku hry, pak už nee
+	if Input.is_action_just_pressed("ui_left"):
+		if left_hint != null:
+			left_hint.visible = false
+		$"/root/controller".used_left_hint = true
+	if Input.is_action_just_pressed("ui_right"):
+		if right_hint != null:
+			right_hint.visible = false
+		$"/root/controller".used_right_hint = true
+	if Input.is_action_just_pressed("ui_accept"):
+		if jump_hint != null:
+			jump_hint.visible = false
+		$"/root/controller".used_jump_hint = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:

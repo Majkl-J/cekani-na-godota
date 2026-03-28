@@ -29,6 +29,14 @@ animations = [{
 "loop": true,
 "name": &"good",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jthao")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dsb53"]

@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	return
 
 func tryOpenDoor():
-	for hit: Node2D in $Interaction_Door.get_overlapping_bodies():
+	for hit: Node2D in $Interaction.get_overlapping_bodies():
 		if not hit is Door:
 			continue
 		var door: Door = hit

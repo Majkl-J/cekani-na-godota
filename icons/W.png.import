@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://busardvmar6u4"
-path="res://.godot/imported/Šipka.png-85244c14d9b53c6d661ea7fd0a9f8a39.ctex"
+uid="uid://q62lk5pw0g33"
+path="res://.godot/imported/W.png-be27637c4ad78cfda849824a4da7992a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/Šipka.png"
-dest_files=["res://.godot/imported/Šipka.png-85244c14d9b53c6d661ea7fd0a9f8a39.ctex"]
+source_file="res://icons/W.png"
+dest_files=["res://.godot/imported/W.png-be27637c4ad78cfda849824a4da7992a.ctex"]
 
 [params]
 

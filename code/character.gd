@@ -8,6 +8,12 @@ var last_motion = Vector2.ZERO
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@export var use_mouse_flashlight_aim: bool = true
+@export var flashlight_rotate_speed: float = 2.5
+@export var flashlight_enabled: bool = false
+@onready var flashlight_pivot: Node2D = $FlashlightPivot
+@onready var flashlight: PointLight2D = $FlashlightPivot/Flashlight
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 # Nápověda
 @onready var left_hint = $HintContainer/LeftHint
@@ -20,7 +26,8 @@ func _ready() -> void:
 	# Fuck you, no time. Hardcoding :333
 	var current_room: Scene = $"/root/controller".get_main_node()
 	is_in_space = current_room.get_meta("room_id") == 3
-		# Nápověda
+	flashlight.visible = flashlight_enabled
+	# Nápověda
 	if left_hint != null:
 		left_hint.visible = not $"/root/controller".used_left_hint
 	if right_hint != null:
@@ -42,12 +49,18 @@ func _process(delta: float) -> void:
 		if jump_hint != null:
 			jump_hint.visible = false
 		$"/root/controller".used_jump_hint = true
+	update_flashlight(delta)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if event.pressed and Input.is_action_just_pressed("open"):
+		if not event.pressed:
+			return
+		if Input.is_action_just_pressed("open"):
 			tryOpenDoor();
-	return
+	
+	if event.is_action_pressed("flashlight_toggle"):
+		flashlight_enabled = !flashlight_enabled
+		flashlight.visible = flashlight_enabled
 
 func tryOpenDoor():
 	for hit: Node2D in $Interaction.get_overlapping_bodies():
@@ -71,7 +84,7 @@ func default_phys(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
@@ -81,8 +94,8 @@ func default_phys(delta: float) -> void:
 
 # No documentation. Figure it out~ :3c
 func space_phys(delta: float):
-	var slowdown = SPEED * 0.1
-	var accell = SPEED * 0.2
+	var slowdown = SPEED * 0.3
+	var accell = SPEED * 0.6
 	# Lazyyyy qwq
 	var direction_x := Input.get_axis("ui_left", "ui_right")
 	var direction_y := Input.get_axis("ui_up", "ui_down")
@@ -107,6 +120,24 @@ func update_animation(direction: float) -> void:
 		animated_sprite_2d.flip_h = true
 	elif direction < 0:
 		animated_sprite_2d.flip_h = false
+
+func update_flashlight(delta: float) -> void:
+	if not flashlight_enabled:
+		return
+
+	if use_mouse_flashlight_aim:
+		var mouse_pos: Vector2 = get_global_mouse_position()
+		var dir: Vector2 = mouse_pos - global_position
+		flashlight_pivot.rotation = dir.angle()
+	else:
+		var rotate_dir := 0.0
+
+		if Input.is_action_pressed("flashlight_left"):
+			rotate_dir -= 1.0
+		if Input.is_action_pressed("flashlight_right"):
+			rotate_dir += 1.0
+
+		flashlight_pivot.rotation += rotate_dir * flashlight_rotate_speed * delta
 
 func check_motion_flip() -> void:
 	if last_motion.x < 0:

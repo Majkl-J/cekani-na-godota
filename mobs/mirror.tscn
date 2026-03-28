@@ -12,7 +12,7 @@ radius = 12.0
 height = 72.0
 
 [node name="Mirror" type="StaticBody2D" unique_id=1253096485]
-collision_layer = 24
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_u2tw1")
 metadata/_custom_type_script = "uid://dbq0po6vl1ju8"
@@ -29,5 +29,9 @@ texture = ExtResource("2_ssj6h")
 [node name="Normal" type="Marker2D" parent="." unique_id=642599669]
 position = Vector2(1, 0)
 
-[node name="CollisonInteraction" type="CollisionShape2D" parent="." unique_id=356478898]
+[node name="CollisonInteraction" type="Area2D" parent="." unique_id=1283598533]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisonInteraction" unique_id=356478898]
 shape = SubResource("CapsuleShape2D_u2tw1")

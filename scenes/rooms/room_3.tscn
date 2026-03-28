@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cqtj4cg7tyr0t"]
+[gd_scene format=3 uid="uid://cfytbtm8r72ds"]
 
 [ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_g5ssp"]
 [ext_resource type="Texture2D" uid="uid://j48g8dmwayrr" path="res://icons/1.scena 2.png" id="2_ahsqd"]
@@ -53,14 +53,14 @@ shape = SubResource("WorldBoundaryShape2D_cg05x")
 [node name="RoomCamera" type="Camera2D" parent="Room" unique_id=950895562]
 scale = Vector2(0.44642857, 0.44642857)
 
-[node name="Mirror" parent="." unique_id=1253096485 instance=ExtResource("4_hfp1j")]
-position = Vector2(-285, -3)
-
 [node name="Beam_Emitter" parent="." unique_id=196632771 instance=ExtResource("5_d8ufh")]
 position = Vector2(-518, -229)
 
 [node name="Mirror2" parent="." unique_id=1559354088 instance=ExtResource("4_hfp1j")]
 position = Vector2(-138, -230)
+rotation = 3.1415927
+metadata/upper_limit = 180.0
+metadata/lower_limit = 90.0
 
-[node name="Mirror3" parent="." unique_id=996482980 instance=ExtResource("4_hfp1j")]
-position = Vector2(440, -79)
+[node name="Mirror" parent="." unique_id=1253096485 instance=ExtResource("4_hfp1j")]
+position = Vector2(-361, -73)

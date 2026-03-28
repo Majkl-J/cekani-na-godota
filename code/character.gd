@@ -33,20 +33,6 @@ func tryOpenDoor():
 		door.passThrough(self)
 	return
 
-func tryRotateMirror(dir: int, delta: float):
-	for hit: Node2D in $Interaction.get_overlapping_bodies():
-		if not hit is Mirror:
-			continue
-		var mirror: Mirror = hit
-		mirror.rotate_this_fuck(dir, delta)
-	return
-
-func _process(delta: float) -> void:
-	if Input.is_action_pressed("mirror_left"):
-		tryRotateMirror(-1, delta)
-	if Input.is_action_pressed("mirror_right"):
-		tryRotateMirror(1, delta)
-
 func _physics_process(delta: float) -> void:
 	if(not is_in_space):
 		default_phys(delta)

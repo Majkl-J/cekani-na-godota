@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://2vyu4v3cuowj" path="res://icons/Rio_walking-7.png" id="8_l1pxy"]
 [ext_resource type="Texture2D" uid="uid://busardvmar6u4" path="res://icons/Šipka.png" id="14_l1pxy"]
 [ext_resource type="Texture2D" uid="uid://ddqjc8r4q35kj" path="res://icons/Spacebar.png" id="15_nljke"]
+[ext_resource type="Texture2D" uid="uid://cbels2ycyi6kf" path="res://icons/F.png" id="16_e201i"]
 [ext_resource type="Texture2D" uid="uid://ciep5fm4xrt03" path="res://icons/Kužel_světla_.png" id="16_oubap"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nljke"]
@@ -136,12 +137,12 @@ scale = Vector2(0.02, 0.02)
 texture = ExtResource("15_nljke")
 
 [node name="FlashHint" type="TextureRect" parent="HintContainer" unique_id=1264680927]
-offset_left = -75.0
-offset_top = -69.0
-offset_right = 1973.0
-offset_bottom = 1979.0
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("15_nljke")
+offset_left = -73.0
+offset_top = -61.5
+offset_right = 1975.0
+offset_bottom = 1986.5
+scale = Vector2(0.014, 0.014)
+texture = ExtResource("16_e201i")
 
 [node name="FlashlightPivot" type="Node2D" parent="." unique_id=291783483]
 

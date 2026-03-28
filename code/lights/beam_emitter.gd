@@ -15,8 +15,9 @@ func _process(delta: float) -> void:
 	if($RayCast.is_colliding()):
 		var collider: CollisionObject2D = $RayCast.get_collider()
 		if(collider.get_collision_layer_value(4)):
-			var light_collider: AbstractLightHandler = collider
-			light_collider._handle_light_collision(self, $RayCast.get_collision_point())
+			if collider is AbstractLightHandler:
+				var light_collider: AbstractLightHandler = collider
+				light_collider._handle_light_collision(self, $RayCast.get_collision_point())
 		var collision_loc: Vector2 = $RayCast.get_collision_point()
 		var distance = global_position.distance_to(collision_loc)
 		if($Beam.get_current_length() == distance):

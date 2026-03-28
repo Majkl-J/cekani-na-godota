@@ -4,6 +4,8 @@ extends AbstractLightHandler
 var glowing: bool = false
 var powered: bool = false
 
+@onready var con: MasterController = $"/root/controller"
+
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -20,8 +22,13 @@ func _process(delta: float) -> void:
 func change_power(new_power: bool = false):
 	if(powered == new_power):
 		return
-	powered = new_power
 	update_animation("powered" if new_power else "unpowered")
+	var id = get_meta("id")
+	if(con.blockers.has(id)):
+		var to_toggle = con.blockers[id]
+		for blocker: Blocker in to_toggle:
+			blocker.change_state(new_power)
+	powered = new_power
 	return
 
 func update_animation(state: String):

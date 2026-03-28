@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c2vivsrl4o0my"]
+
+[ext_resource type="Texture2D" uid="uid://bf0n5oyd6y7cr" path="res://icons/Bariéry_1.png" id="1_g7irj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwfc"]
+size = Vector2(73.33333, 416.6667)
+
+[node name="Light_Blocker" type="StaticBody2D" unique_id=71224044]
+z_index = 11
+scale = Vector2(0.3, 0.3)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1853052579]
+texture = ExtResource("1_g7irj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1852272588]
+position = Vector2(-3.3333333, -4.9999933)
+shape = SubResource("RectangleShape2D_khwfc")

@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="3_hfp1j"]
 [ext_resource type="PackedScene" uid="uid://36xkowmvw4db" path="res://mobs/mirror.tscn" id="4_hfp1j"]
 [ext_resource type="PackedScene" uid="uid://tvr7dlxowya7" path="res://scenes/beam_emitter.tscn" id="5_d8ufh"]
-[ext_resource type="PackedScene" uid="uid://cnhxkm3u3len7" path="res://mobs/star.tscn" id="6_d8ufh"]
+[ext_resource type="PackedScene" uid="uid://b55lsrrvhrnpx" path="res://mobs/star.tscn" id="6_d8ufh"]
+[ext_resource type="PackedScene" uid="uid://d2a221pkhug5g" path="res://mobs/activated_blocker.tscn" id="7_5bkl7"]
+[ext_resource type="PackedScene" uid="uid://04aw4vb2ixy2" path="res://object/light_blocker_corner.tscn" id="8_wynrr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -123.0
@@ -65,3 +67,22 @@ metadata/lower_limit = 90.0
 
 [node name="Star" parent="." unique_id=1563425556 instance=ExtResource("6_d8ufh")]
 position = Vector2(-252, 94)
+metadata/id = 1
+
+[node name="ActivatedBlocker" parent="." unique_id=1411481531 instance=ExtResource("7_5bkl7")]
+position = Vector2(3, -4)
+metadata/id = 1
+metadata/inverted = true
+
+[node name="LightBlockerCorner" parent="." unique_id=139670392 instance=ExtResource("8_wynrr")]
+position = Vector2(36, -128)
+
+[node name="LightBlockerCorner2" parent="." unique_id=1184849201 instance=ExtResource("8_wynrr")]
+position = Vector2(27.999996, 95.99999)
+rotation = -1.5446163
+
+[node name="Mirror2" parent="." unique_id=1253096485 instance=ExtResource("4_hfp1j")]
+position = Vector2(76, 72)
+rotation = 3.1415927
+metadata/upper_limit = 350.0
+metadata/lower_limit = 90.0

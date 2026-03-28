@@ -75,4 +75,3 @@ offset = Vector2(29, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620351255]
 shape = SubResource("CircleShape2D_wineq")
-metadata/linked_object_id = 0

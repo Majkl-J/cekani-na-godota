@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciep5fm4xrt03"
-path="res://.godot/imported/Kužel_světla_.png-f43b0b8cb87da8b76b0cae39f2702c4b.ctex"
+uid="uid://q62lk5pw0g33"
+path="res://.godot/imported/W.png-be27637c4ad78cfda849824a4da7992a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/Kužel_světla_.png"
-dest_files=["res://.godot/imported/Kužel_světla_.png-f43b0b8cb87da8b76b0cae39f2702c4b.ctex"]
+source_file="res://icons/W.png"
+dest_files=["res://.godot/imported/W.png-be27637c4ad78cfda849824a4da7992a.ctex"]
 
 [params]
 

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://mobs/kytka_3.tscn" id="7_tjvhs"]
 [ext_resource type="PackedScene" path="res://mobs/kytka_4.tscn" id="8_np14n"]
 [ext_resource type="Texture2D" uid="uid://bi1cehoryrylx" path="res://icons/Zamek2.png" id="10_q734l"]
-[ext_resource type="Script" path="res://scenes/rooms/kytky.gd" id="10_sbn3u"]
+[ext_resource type="Script" uid="uid://s6i1avf30uxj" path="res://scenes/rooms/kytky.gd" id="10_sbn3u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -100.44643

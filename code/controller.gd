@@ -1,4 +1,9 @@
-extends Node
+class_name MasterController extends Node
+
+# Pro nápovědu
+var used_left_hint: bool = false
+var used_right_hint: bool = false
+var used_jump_hint: bool = false
 
 var first_level = "res://scenes/rooms/room_1.tscn"
 
@@ -42,7 +47,21 @@ func get_main_node() -> Node:
 	return get_tree().root.get_child(1)
 
 
+static var blockers: Dictionary[int, Array] = {}
 
+func add_to_blockers(to_add: Blocker):
+	var id = to_add.get_meta("id")
+	if(blockers.find_key(id)):
+		blockers[id].append(to_add)
+	else:
+		blockers.set(id, [to_add])
+
+func remove_from_blockers(to_wipe: Blocker):
+	var id = to_wipe.get_meta("id")
+	var funny_array = blockers[id]
+	var loc = funny_array.rfind(to_wipe)
+	funny_array.remove_at(loc)
+	blockers[id] = funny_array
 
 static var door_links = {
 	0: ["room_1","room_2"],
@@ -91,3 +110,5 @@ func load_and_move_to_room(room_path: String):
 
 func get_walk_door_id():
 	return walk_door_id
+
+static var flowers_complete: bool = false

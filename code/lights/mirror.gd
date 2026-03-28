@@ -8,7 +8,9 @@ var mirror_on = preload("res://icons/light/mirror_lit.png")
 
 var reflecting: bool = false
 var hit_reflect: bool = true
+var interactable: bool = true
 const ROTATE_RATE = 29
+
 
 func get_reflecting():
 	return reflecting
@@ -18,6 +20,7 @@ func set_reflecting(new_value: bool):
 		$Sprite2D.texture = mirror_on
 	else:
 		$Sprite2D.texture = mirror_off
+	reflecting = new_value
 
 func _handle_light_collision(light_source: BeemEmitter, hit_pos: Vector2) -> void:
 	hit_reflect = true
@@ -36,6 +39,9 @@ func _handle_light_collision(light_source: BeemEmitter, hit_pos: Vector2) -> voi
 	var angle = acos(cos_value) * angle_mult
 	set_reflecting(true)
 	add_emitter(angle, light_source, hit_pos)
+	return
+
+func _ready() -> void:
 	return
 
 func _process(delta: float) -> void:

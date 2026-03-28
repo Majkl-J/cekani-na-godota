@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cu6t7cimj1jjm"]
+
+[ext_resource type="Script" uid="uid://cvwwdoeolvw57" path="res://code/lights/splitter.gd" id="1_35oxi"]
+[ext_resource type="Texture2D" uid="uid://d2yc2rufmu5xp" path="res://icons/light/splitter_off.png" id="2_304ta"]
+[ext_resource type="PackedScene" uid="uid://tvr7dlxowya7" path="res://scenes/beam_emitter.tscn" id="3_304ta"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_35oxi"]
+a = Vector2(0, -22)
+b = Vector2(0, 23)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_304ta"]
+radius = 12.0
+height = 72.0
+
+[node name="Splitter" type="StaticBody2D" unique_id=505479904]
+z_index = 10
+z_as_relative = false
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_35oxi")
+metadata/_custom_type_script = "uid://dbq0po6vl1ju8"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=905946305]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_304ta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2058868719]
+shape = SubResource("SegmentShape2D_35oxi")
+
+[node name="Emitter1" parent="." unique_id=925142359 instance=ExtResource("3_304ta")]
+position = Vector2(4, 11)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Emitter2" parent="." unique_id=196632771 instance=ExtResource("3_304ta")]
+position = Vector2(4, -13)
+
+[node name="CollisonInteraction" type="Area2D" parent="." unique_id=393608494]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisonInteraction" unique_id=942162554]
+shape = SubResource("CapsuleShape2D_304ta")

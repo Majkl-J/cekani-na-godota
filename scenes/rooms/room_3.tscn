@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b55lsrrvhrnpx" path="res://mobs/star.tscn" id="6_d8ufh"]
 [ext_resource type="PackedScene" uid="uid://d2a221pkhug5g" path="res://mobs/activated_blocker.tscn" id="7_5bkl7"]
 [ext_resource type="PackedScene" uid="uid://04aw4vb2ixy2" path="res://object/light_blocker_corner.tscn" id="8_wynrr"]
+[ext_resource type="PackedScene" uid="uid://cu6t7cimj1jjm" path="res://mobs/splitter.tscn" id="9_wmuqe"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -123.0
@@ -57,7 +58,7 @@ shape = SubResource("WorldBoundaryShape2D_cg05x")
 scale = Vector2(0.44642857, 0.44642857)
 
 [node name="Beam_Emitter" parent="." unique_id=196632771 instance=ExtResource("5_d8ufh")]
-position = Vector2(-500, -229)
+position = Vector2(-497, -228)
 
 [node name="Mirror" parent="." unique_id=1559354088 instance=ExtResource("4_hfp1j")]
 position = Vector2(-138, -230)
@@ -81,8 +82,5 @@ position = Vector2(36, -128)
 position = Vector2(27.999996, 95.99999)
 rotation = -1.5446163
 
-[node name="Mirror2" parent="." unique_id=1253096485 instance=ExtResource("4_hfp1j")]
-position = Vector2(76, 72)
-rotation = 3.1415927
-metadata/upper_limit = 350.0
-metadata/lower_limit = 90.0
+[node name="Splitter" parent="." unique_id=505479904 instance=ExtResource("9_wmuqe")]
+position = Vector2(73, 53)

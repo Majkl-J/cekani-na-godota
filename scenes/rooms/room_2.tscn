@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://csc41evixocf3"]
 
 [ext_resource type="PackedScene" uid="uid://c2rnql07jii7a" path="res://scenes/rooms/room_1.tscn" id="1_6a8el"]
-[ext_resource type="PackedScene" uid="uid://d78o1k5ty0j0" path="res://scenes/beam_poly.tscn" id="2_3e1ps"]
-[ext_resource type="Script" path="res://code/beam.gd" id="2_ar6ir"]
 [ext_resource type="Texture2D" uid="uid://dfia1n2x4j5lx" path="res://icons/2.scena.png" id="2_km8ef"]
 [ext_resource type="Texture2D" uid="uid://cagarhvj36yvy" path="res://icons/Kytky foreground.png" id="3_0hwry"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6a8el"]
-radius = 17.262676
+[ext_resource type="PackedScene" uid="uid://tvr7dlxowya7" path="res://scenes/beam_emitter.tscn" id="4_km8ef"]
+[ext_resource type="PackedScene" uid="uid://36xkowmvw4db" path="res://mobs/mirror.tscn" id="5_0hwry"]
 
 [node name="Room2" unique_id=45653194 instance=ExtResource("1_6a8el")]
 metadata/room_id = 2
@@ -20,18 +17,12 @@ position = Vector2(0.44643086, 0.2232086)
 scale = Vector2(0.26785713, 0.26827046)
 texture = ExtResource("3_0hwry")
 
-[node name="Beam_Emitter" type="StaticBody2D" parent="." index="1" unique_id=782626554]
-collision_layer = 0
-collision_mask = 0
+[node name="Beam_Emitter" parent="." index="1" unique_id=196632771 instance=ExtResource("4_km8ef")]
 
-[node name="RayCast2D" type="RayCast2D" parent="Beam_Emitter" index="0" unique_id=2085351933]
-target_position = Vector2(700, 0)
-collision_mask = 9
+[node name="Mirror" parent="." index="2" unique_id=1253096485 instance=ExtResource("5_0hwry")]
+position = Vector2(294, -1)
+rotation = 1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam_Emitter" index="1" unique_id=1219573650]
-shape = SubResource("CircleShape2D_6a8el")
-
-[node name="Beam" type="Node2D" parent="Beam_Emitter" index="2" unique_id=673774649]
-script = ExtResource("2_ar6ir")
-
-[node name="BeamPoly" parent="Beam_Emitter/Beam" index="0" unique_id=1384251498 instance=ExtResource("2_3e1ps")]
+[node name="Mirror2" parent="." index="3" unique_id=2012511344 instance=ExtResource("5_0hwry")]
+position = Vector2(293, -221)
+rotation = 0.7853982

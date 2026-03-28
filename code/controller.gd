@@ -62,6 +62,10 @@ static var room_door_inits = [
 	{
 		"id" = 1,
 		"loc" = [280,280]
+	}],
+	[{
+		"id" = 1,
+		"loc" = [-340,280]
 	}]
 ]
 

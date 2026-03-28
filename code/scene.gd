@@ -3,13 +3,12 @@ extends Node2D
 
 var player_plop_origin = Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	var doors = $"/root/controller".get_room_doors(get_meta("room_id"))
 	plop_down_doors(doors)
 	plop_down_player(player_plop_origin)
-	
 	plop_down_extras()
-	pass # Replace with function body.
 
 func plop_down_doors(doors: Array):
 	var to_plop: Resource = $"/root/controller".get_door_resource()

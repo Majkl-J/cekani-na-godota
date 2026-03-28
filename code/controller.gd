@@ -1,5 +1,10 @@
 extends Node
 
+# Pro nápovědu
+var used_left_hint: bool = false
+var used_right_hint: bool = false
+var used_jump_hint: bool = false
+
 var first_level = "res://scenes/rooms/room_1.tscn"
 
 var walk_door_id = -1

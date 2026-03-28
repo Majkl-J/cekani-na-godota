@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bvd3j2qlasbo8" path="res://icons/Rio_standing-5.png" id="6_e201i"]
 [ext_resource type="Texture2D" uid="uid://cdmyrkbneavhk" path="res://icons/Rio_walking-6.png" id="7_lgn7g"]
 [ext_resource type="Texture2D" uid="uid://2vyu4v3cuowj" path="res://icons/Rio_walking-7.png" id="8_l1pxy"]
+[ext_resource type="Texture2D" uid="uid://twlfqsas7prm" path="res://icons/Šipka.png" id="14_l1pxy"]
+[ext_resource type="Texture2D" uid="uid://c8iyq5h6dcwvw" path="res://icons/Spacebar.png" id="15_nljke"]
 [ext_resource type="Texture2D" uid="uid://ciep5fm4xrt03" path="res://icons/Kužel_světla_.png" id="14_l1pxy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nljke"]
@@ -106,6 +108,32 @@ collision_mask = 20
 position = Vector2(-1, -12)
 shape = SubResource("CapsuleShape2D_e201i")
 
+[node name="HintContainer" type="Node2D" parent="." unique_id=481626915]
+
+[node name="LeftHint" type="TextureRect" parent="HintContainer" unique_id=1388130313]
+offset_left = -80.0
+offset_top = -20.0
+offset_right = 1968.0
+offset_bottom = 2028.0
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("14_l1pxy")
+flip_h = true
+
+[node name="RightHint" type="TextureRect" parent="HintContainer" unique_id=1503273519]
+offset_left = 35.0
+offset_top = -20.0
+offset_right = 2083.0
+offset_bottom = 2028.0
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("14_l1pxy")
+
+[node name="JumpHint" type="TextureRect" parent="HintContainer" unique_id=246138982]
+offset_left = -27.0
+offset_top = -100.0
+offset_right = 2021.0
+offset_bottom = 1948.0
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("15_nljke")
 [node name="FlashlightPivot" type="Node2D" parent="." unique_id=291783483]
 
 [node name="Flashlight" type="PointLight2D" parent="FlashlightPivot" unique_id=1417247687]

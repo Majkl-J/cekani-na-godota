@@ -1,26 +1,6 @@
 [gd_scene format=3 uid="uid://cpinbrtjm5awd"]
 
-[sub_resource type="GDScript" id="GDScript_t413n"]
-script/source = "extends Node
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-static var door_links = {
-	
-}
-
-func door_link() -> Node2D:
-	
-	return
-"
+[ext_resource type="Script" uid="uid://cqjeinbcqy36w" path="res://code/controller.gd" id="1_34lj5"]
 
 [node name="Singleton" type="Node" unique_id=1771876261]
-script = SubResource("GDScript_t413n")
+script = ExtResource("1_34lj5")

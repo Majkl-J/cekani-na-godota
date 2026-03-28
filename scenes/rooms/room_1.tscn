@@ -2,8 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://c668uhpc0lvg5" path="res://icons/room.png" id="1_vu5en"]
 [ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_wodat"]
-[ext_resource type="PackedScene" uid="uid://cipm3hhi8lknx" path="res://mobs/blorbo.tscn" id="2_8oql1"]
-[ext_resource type="PackedScene" uid="uid://cya65crne8dsr" path="res://mobs/door.tscn" id="3_fbq1s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -123.0
@@ -20,11 +18,9 @@ distance = -256.56412
 normal = Vector2(-0.00462958, 0.99998933)
 distance = -126.78639
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cg05x"]
-size = Vector2(44, 20)
-
 [node name="Room1" type="Node2D" unique_id=45653194]
 script = ExtResource("1_wodat")
+metadata/room_id = 1
 
 [node name="Room" type="StaticBody2D" parent="." unique_id=1214195482]
 scale = Vector2(2.24, 2.24)
@@ -46,15 +42,3 @@ shape = SubResource("WorldBoundaryShape2D_cg05x")
 
 [node name="RoomCamera" type="Camera2D" parent="Room" unique_id=950895562]
 scale = Vector2(0.44642857, 0.44642857)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1646790287]
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1149989269]
-position = Vector2(0, 36)
-shape = SubResource("RectangleShape2D_cg05x")
-
-[node name="Blorbo" parent="." unique_id=1826942773 instance=ExtResource("2_8oql1")]
-
-[node name="Door" parent="." unique_id=479751859 instance=ExtResource("3_fbq1s")]
-position = Vector2(343, 278)

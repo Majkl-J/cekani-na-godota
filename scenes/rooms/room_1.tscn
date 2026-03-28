@@ -74,3 +74,6 @@ texture = ExtResource("6_wtcj1")
 position = Vector2(-8.106232e-06, -8.106232e-06)
 scale = Vector2(0.2678571, 0.26785713)
 texture = ExtResource("7_38fm3")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Room" unique_id=1305479757]
+color = Color(1, 0, 0, 1)

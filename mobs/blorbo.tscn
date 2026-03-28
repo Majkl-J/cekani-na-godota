@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://2vyu4v3cuowj" path="res://icons/Rio_walking-7.png" id="8_l1pxy"]
 [ext_resource type="Texture2D" uid="uid://twlfqsas7prm" path="res://icons/Šipka.png" id="14_l1pxy"]
 [ext_resource type="Texture2D" uid="uid://c8iyq5h6dcwvw" path="res://icons/Spacebar.png" id="15_nljke"]
+[ext_resource type="Texture2D" uid="uid://bewbfyvb1wgw6" path="res://icons/kužel_baterky.png" id="16_oubap"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nljke"]
 animations = [{
@@ -131,3 +132,9 @@ offset_right = 2021.0
 offset_bottom = 1948.0
 scale = Vector2(0.025, 0.025)
 texture = ExtResource("15_nljke")
+
+[node name="FlashlightPivot" type="Node2D" parent="." unique_id=766102227]
+
+[node name="Flashlight" type="PointLight2D" parent="FlashlightPivot" unique_id=1205372950]
+texture = ExtResource("16_oubap")
+texture_scale = 0.47

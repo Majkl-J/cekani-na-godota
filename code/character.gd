@@ -7,6 +7,12 @@ var last_motion = Vector2.ZERO
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+# Pro baterku
+@export var use_mouse_flashlight_aim: bool = true
+@export var flashlight_rotate_speed: float = 2.5
+@export var flashlight_enabled: bool = true
+@onready var flashlight_pivot: Node2D = $FlashlightPivot
+@onready var flashlight: PointLight2D = $FlashlightPivot/Flashlight
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 # Nápověda
@@ -20,13 +26,15 @@ func _ready() -> void:
 	# Fuck you, no time. Hardcoding :333
 	var current_room: Scene = $"/root/controller".get_main_node()
 	is_in_space = current_room.get_meta("room_id") == 3
-		# Nápověda
+	# Nápověda
 	if left_hint != null:
 		left_hint.visible = not $"/root/controller".used_left_hint
 	if right_hint != null:
 		right_hint.visible = not $"/root/controller".used_right_hint
 	if jump_hint != null:
 		jump_hint.visible = not $"/root/controller".used_jump_hint
+	# Pro baterku
+	flashlight.visible = flashlight_enabled
 
 func _process(delta: float) -> void:
 	# Pro nápovědu na začátku hry, pak už nee
@@ -42,13 +50,19 @@ func _process(delta: float) -> void:
 		if jump_hint != null:
 			jump_hint.visible = false
 		$"/root/controller".used_jump_hint = true
+	# Pro baterku, volání za každým framem
+	update_flashlight(delta)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.pressed and Input.is_action_just_pressed("open"):
 			tryOpenDoor();
-	return
-
+	#return
+		# Pro baterku
+		if event.is_action_pressed("flashlight_toggle"):
+			flashlight_enabled = !flashlight_enabled
+			flashlight.visible = flashlight_enabled
+	
 func tryOpenDoor():
 	for hit: Node2D in $Interaction.get_overlapping_bodies():
 		if not hit is Door:
@@ -62,8 +76,13 @@ func _physics_process(delta: float) -> void:
 		default_phys(delta)
 	else:
 		space_phys(delta)
-
+	# Pro baterku
 	var direction := Input.get_axis("ui_left", "ui_right")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
 	update_animation(direction)
 	move_and_slide()
 
@@ -115,3 +134,22 @@ func check_motion_flip() -> void:
 	elif last_motion.x > 0:
 		# If moving right, reset to the default flip
 		animated_sprite_2d.flip_h = false
+
+# Pro baterku
+func update_flashlight(delta: float) -> void:
+	if not flashlight_enabled:
+		return
+
+	if use_mouse_flashlight_aim:
+		var mouse_pos: Vector2 = get_global_mouse_position()
+		var dir: Vector2 = mouse_pos - global_position
+		flashlight_pivot.rotation = dir.angle()
+	else:
+		var rotate_dir := 0.0
+
+		if Input.is_action_pressed("flashlight_left"):
+			rotate_dir -= 1.0
+		if Input.is_action_pressed("flashlight_right"):
+			rotate_dir += 1.0
+
+		flashlight_pivot.rotation += rotate_dir * flashlight_rotate_speed * delta

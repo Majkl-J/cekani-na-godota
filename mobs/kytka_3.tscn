@@ -1,16 +1,16 @@
-[gd_scene format=3 uid="uid://ba5pduenjl2er"]
+[gd_scene format=3 uid="uid://nr0ptd30gxi5"]
 
-[ext_resource type="Script" uid="uid://d2tx6ur2k683e" path="res://mobs/kytka.gd" id="1_cn0e4"]
-[ext_resource type="Texture2D" uid="uid://crieda5y1md5n" path="res://icons/Kytky-1.png" id="1_dsb53"]
-[ext_resource type="Texture2D" uid="uid://8qomd2pea2oh" path="res://icons/Kytky-2.png" id="2_cn0e4"]
-[ext_resource type="Texture2D" uid="uid://cxs8mfcrjyuqt" path="res://icons/Kytky-3.png" id="3_fvofj"]
-[ext_resource type="Texture2D" uid="uid://cyxgramwqa8vg" path="res://icons/Kytky-4.png" id="4_jthao"]
+[ext_resource type="Script" uid="uid://d2tx6ur2k683e" path="res://mobs/kytka.gd" id="1_thso1"]
+[ext_resource type="Texture2D" uid="uid://crieda5y1md5n" path="res://icons/Kytky-1.png" id="1_x8nlf"]
+[ext_resource type="Texture2D" uid="uid://8qomd2pea2oh" path="res://icons/Kytky-2.png" id="2_thso1"]
+[ext_resource type="Texture2D" uid="uid://cxs8mfcrjyuqt" path="res://icons/Kytky-3.png" id="3_b7owa"]
+[ext_resource type="Texture2D" uid="uid://cyxgramwqa8vg" path="res://icons/Kytky-4.png" id="4_xsc1d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdwi3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dsb53")
+"texture": ExtResource("1_x8nlf")
 }],
 "loop": true,
 "name": &"default",
@@ -18,13 +18,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cn0e4")
+"texture": ExtResource("2_thso1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_fvofj")
+"texture": ExtResource("3_b7owa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_jthao")
+"texture": ExtResource("4_xsc1d")
 }],
 "loop": true,
 "name": &"good",
@@ -35,9 +35,10 @@ animations = [{
 radius = 4.0
 height = 16.0
 
-[node name="kytka1" type="Node2D" unique_id=1381509044]
+[node name="kytka3" type="Node2D" unique_id=1381509044]
 scale = Vector2(7, 7)
-script = ExtResource("1_cn0e4")
+script = ExtResource("1_thso1")
+flower_id = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=950703508]
 position = Vector2(22, 2)

@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cagarhvj36yvy" path="res://icons/Kytky foreground.png" id="3_0hwry"]
 [ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="3_sbn3u"]
 [ext_resource type="PackedScene" uid="uid://ba5pduenjl2er" path="res://mobs/kytka_1.tscn" id="4_0hwry"]
-[ext_resource type="Script" uid="uid://b1y03sysv6s3x" path="res://mobs/kytka_2.gd" id="5_nu3hr"]
-[ext_resource type="Script" uid="uid://yvl4hk2pslyl" path="res://mobs/kytka_3.gd" id="6_tjvhs"]
-[ext_resource type="Script" uid="uid://o1odsx6ni1bf" path="res://mobs/kytka_4.gd" id="7_np14n"]
+[ext_resource type="PackedScene" uid="uid://4keleg87n27t" path="res://mobs/kytka_2.tscn" id="6_0hwry"]
+[ext_resource type="PackedScene" uid="uid://nr0ptd30gxi5" path="res://mobs/kytka_3.tscn" id="7_tjvhs"]
+[ext_resource type="PackedScene" uid="uid://mfied50h4o65" path="res://mobs/kytka_4.tscn" id="8_np14n"]
+[ext_resource type="Script" uid="uid://s6i1avf30uxj" path="res://scenes/rooms/kytky.gd" id="10_sbn3u"]
 
 [node name="Room2" unique_id=45653194 instance=ExtResource("1_6a8el")]
 metadata/room_id = 2
@@ -29,17 +30,17 @@ texture = ExtResource("3_0hwry")
 position = Vector2(-293.00003, 65.000015)
 scale = Vector2(20, 20)
 
-[node name="kytka2" parent="." index="2" unique_id=514833315 instance=ExtResource("4_0hwry")]
-position = Vector2(-102.00001, 101)
+[node name="kytka2" parent="." index="2" unique_id=500411564 instance=ExtResource("6_0hwry")]
+position = Vector2(-102, 101)
 scale = Vector2(14, 14)
-script = ExtResource("5_nu3hr")
 
-[node name="kytka3" parent="." index="3" unique_id=347986742 instance=ExtResource("4_0hwry")]
+[node name="kytka3" parent="." index="3" unique_id=1138438335 instance=ExtResource("7_tjvhs")]
 position = Vector2(164, 76)
 scale = Vector2(17, 17)
-script = ExtResource("6_tjvhs")
 
-[node name="kytka4" parent="." index="4" unique_id=2048434725 instance=ExtResource("4_0hwry")]
-position = Vector2(358, 103.000015)
+[node name="kytka4" parent="." index="4" unique_id=1551364667 instance=ExtResource("8_np14n")]
+position = Vector2(358, 103)
 scale = Vector2(15, 15)
-script = ExtResource("7_np14n")
+
+[node name="FlowerPuzzle" type="Node" parent="." index="5" unique_id=795790881]
+script = ExtResource("10_sbn3u")

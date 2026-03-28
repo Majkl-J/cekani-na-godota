@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3ock4iytfuy3" path="res://icons/Obraz.png" id="2_cj6pm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhekj"]
-size = Vector2(69.333336, 121.666664)
+size = Vector2(69.333336, 57)
 
 [node name="Door" type="StaticBody2D" unique_id=479751859]
 scale = Vector2(3, 3)
@@ -19,5 +19,5 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_cj6pm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=327344792]
-position = Vector2(0.33333015, 9.166666)
+position = Vector2(0.33333015, -23.166668)
 shape = SubResource("RectangleShape2D_xhekj")

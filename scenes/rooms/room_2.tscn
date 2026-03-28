@@ -37,20 +37,3 @@ script = ExtResource("6_tjvhs")
 position = Vector2(288, 154.00002)
 scale = Vector2(10, 10)
 script = ExtResource("7_np14n")
-
-[node name="Beam_Emitter" type="StaticBody2D" parent="." index="5" unique_id=782626554]
-visible = false
-collision_layer = 0
-collision_mask = 0
-
-[node name="RayCast2D" type="RayCast2D" parent="Beam_Emitter" index="0" unique_id=2085351933]
-target_position = Vector2(700, 0)
-collision_mask = 9
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam_Emitter" index="1" unique_id=1219573650]
-shape = SubResource("CircleShape2D_6a8el")
-
-[node name="Beam" type="Node2D" parent="Beam_Emitter" index="2" unique_id=673774649]
-script = ExtResource("2_ar6ir")
-
-[node name="BeamPoly" parent="Beam_Emitter/Beam" index="0" unique_id=1384251498 instance=ExtResource("2_3e1ps")]

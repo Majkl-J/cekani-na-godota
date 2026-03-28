@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bswm5hjgmo0qn"]
+
+[ext_resource type="Script" uid="uid://b56d8813440j0" path="res://scenes/nastaveni.gd" id="1_4uxmm"]
+
+[node name="Nastaveni" type="Node" unique_id=1707163100]
+script = ExtResource("1_4uxmm")
+
+[node name="Zpet" type="Button" parent="." unique_id=1266142193]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 952.0
+offset_top = 548.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=1123614723]
+offset_right = 306.0
+offset_bottom = 163.0
+text = "asd"
+
+[connection signal="pressed" from="Zpet" to="." method="_on_zpet_pressed"]

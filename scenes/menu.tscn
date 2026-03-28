@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cy7ntvu0t8jqo"]
+
+[ext_resource type="Script" uid="uid://b0fpbt6kl7ap1" path="res://scenes/menu.gd" id="1_t413n"]
+
+[node name="Node" type="Node" unique_id=728382301]
+script = ExtResource("1_t413n")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2037342507]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="hrat" type="Button" parent="." unique_id=1851106948]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="nastaveni" type="Button" parent="." unique_id=1269479528]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="hrat" to="." method="_on_hrat_pressed"]
+[connection signal="pressed" from="nastaveni" to="." method="_on_nastaveni_pressed"]

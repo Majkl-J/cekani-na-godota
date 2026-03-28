@@ -80,9 +80,11 @@ radius = 25.0
 height = 76.0
 
 [node name="Blorbo" type="CharacterBody2D" unique_id=1826942773 groups=["player"]]
+z_index = 5
+z_as_relative = false
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_mfum6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1732870284]
@@ -97,7 +99,7 @@ shape = SubResource("RectangleShape2D_oubap")
 
 [node name="Interaction" type="Area2D" parent="." unique_id=1522227928]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=414333252]
 position = Vector2(-1, -12)

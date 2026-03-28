@@ -5,6 +5,10 @@
 [ext_resource type="Script" path="res://code/beam.gd" id="2_ar6ir"]
 [ext_resource type="Texture2D" uid="uid://dfia1n2x4j5lx" path="res://icons/2.scena.png" id="2_km8ef"]
 [ext_resource type="Texture2D" uid="uid://cagarhvj36yvy" path="res://icons/Kytky foreground.png" id="3_0hwry"]
+[ext_resource type="PackedScene" uid="uid://ba5pduenjl2er" path="res://mobs/kytka_1.tscn" id="4_0hwry"]
+[ext_resource type="Script" uid="uid://b1y03sysv6s3x" path="res://mobs/kytka_2.gd" id="5_nu3hr"]
+[ext_resource type="Script" uid="uid://yvl4hk2pslyl" path="res://mobs/kytka_3.gd" id="6_tjvhs"]
+[ext_resource type="Script" uid="uid://o1odsx6ni1bf" path="res://mobs/kytka_4.gd" id="7_np14n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6a8el"]
 radius = 17.262676
@@ -20,7 +24,27 @@ position = Vector2(0.44643086, 0.2232086)
 scale = Vector2(0.26785713, 0.26827046)
 texture = ExtResource("3_0hwry")
 
-[node name="Beam_Emitter" type="StaticBody2D" parent="." index="1" unique_id=782626554]
+[node name="kytka1" parent="." index="1" unique_id=1381509044 instance=ExtResource("4_0hwry")]
+position = Vector2(-261, 159)
+scale = Vector2(10, 10)
+
+[node name="kytka2" parent="." index="2" unique_id=514833315 instance=ExtResource("4_0hwry")]
+position = Vector2(-86.00001, 161)
+scale = Vector2(10, 10)
+script = ExtResource("5_nu3hr")
+
+[node name="kytka3" parent="." index="3" unique_id=347986742 instance=ExtResource("4_0hwry")]
+position = Vector2(95, 165)
+scale = Vector2(10, 10)
+script = ExtResource("6_tjvhs")
+
+[node name="kytka4" parent="." index="4" unique_id=2048434725 instance=ExtResource("4_0hwry")]
+position = Vector2(288, 154.00002)
+scale = Vector2(10, 10)
+script = ExtResource("7_np14n")
+
+[node name="Beam_Emitter" type="StaticBody2D" parent="." index="5" unique_id=782626554]
+visible = false
 collision_layer = 0
 collision_mask = 0
 

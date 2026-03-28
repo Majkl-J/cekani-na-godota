@@ -8,6 +8,12 @@ var last_motion = Vector2.ZERO
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@export var use_mouse_flashlight_aim: bool = true
+@export var flashlight_rotate_speed: float = 2.5
+@export var flashlight_enabled: bool = true
+@onready var flashlight_pivot: Node2D = $FlashlightPivot
+@onready var flashlight: PointLight2D = $FlashlightPivot/Flashlight
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var is_in_space = false
@@ -16,6 +22,11 @@ func _ready() -> void:
 	# Fuck you, no time. Hardcoding :333
 	var current_room: Scene = $"/root/controller".get_main_node()
 	is_in_space = current_room.get_meta("room_id") == 3
+	
+	flashlight.visible = flashlight_enabled
+
+func _process(delta: float) -> void:
+	update_flashlight(delta)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
@@ -23,7 +34,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		if Input.is_action_just_pressed("open"):
 			tryOpenDoor();
-	return
+	
+	if event.is_action_pressed("flashlight_toggle"):
+		flashlight_enabled = !flashlight_enabled
+		flashlight.visible = flashlight_enabled
 
 func tryOpenDoor():
 	for hit: Node2D in $Interaction.get_overlapping_bodies():
@@ -83,6 +97,24 @@ func update_animation(direction: float) -> void:
 		animated_sprite_2d.flip_h = true
 	elif direction < 0:
 		animated_sprite_2d.flip_h = false
+
+func update_flashlight(delta: float) -> void:
+	if not flashlight_enabled:
+		return
+
+	if use_mouse_flashlight_aim:
+		var mouse_pos: Vector2 = get_global_mouse_position()
+		var dir: Vector2 = mouse_pos - global_position
+		flashlight_pivot.rotation = dir.angle()
+	else:
+		var rotate_dir := 0.0
+
+		if Input.is_action_pressed("flashlight_left"):
+			rotate_dir -= 1.0
+		if Input.is_action_pressed("flashlight_right"):
+			rotate_dir += 1.0
+
+		flashlight_pivot.rotation += rotate_dir * flashlight_rotate_speed * delta
 
 func check_motion_flip() -> void:
 	if last_motion.x < 0:

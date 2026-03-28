@@ -110,3 +110,5 @@ func load_and_move_to_room(room_path: String):
 
 func get_walk_door_id():
 	return walk_door_id
+
+static var flowers_complete: bool = false

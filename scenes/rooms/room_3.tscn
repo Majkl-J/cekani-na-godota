@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="3_hfp1j"]
 [ext_resource type="PackedScene" uid="uid://36xkowmvw4db" path="res://mobs/mirror.tscn" id="4_hfp1j"]
 [ext_resource type="PackedScene" uid="uid://tvr7dlxowya7" path="res://scenes/beam_emitter.tscn" id="5_d8ufh"]
-[ext_resource type="PackedScene" uid="uid://b55lsrrvhrnpx" path="res://mobs/star.tscn" id="6_d8ufh"]
-[ext_resource type="PackedScene" uid="uid://d2a221pkhug5g" path="res://mobs/activated_blocker.tscn" id="7_5bkl7"]
+[ext_resource type="PackedScene" path="res://mobs/star.tscn" id="6_d8ufh"]
+[ext_resource type="PackedScene" path="res://mobs/activated_blocker.tscn" id="7_5bkl7"]
 [ext_resource type="PackedScene" uid="uid://04aw4vb2ixy2" path="res://object/light_blocker_corner.tscn" id="8_wynrr"]
-[ext_resource type="PackedScene" uid="uid://cu6t7cimj1jjm" path="res://mobs/splitter.tscn" id="9_wmuqe"]
+[ext_resource type="PackedScene" path="res://mobs/splitter.tscn" id="9_wmuqe"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -123.0
@@ -58,6 +58,8 @@ shape = SubResource("WorldBoundaryShape2D_cg05x")
 scale = Vector2(0.44642857, 0.44642857)
 
 [node name="Beam_Emitter" parent="." unique_id=196632771 instance=ExtResource("5_d8ufh")]
+z_index = 0
+z_as_relative = true
 position = Vector2(-497, -228)
 
 [node name="Mirror" parent="." unique_id=1559354088 instance=ExtResource("4_hfp1j")]

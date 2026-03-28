@@ -24,5 +24,14 @@ texture = ExtResource("3_0hwry")
 collision_layer = 0
 collision_mask = 0
 
-[node name="Mirror" parent="." index="2" unique_id=1253096485 instance=ExtResource("3_ar6ir")]
-position = Vector2(100, 0)
+[node name="RayCast2D" type="RayCast2D" parent="Beam_Emitter" index="0" unique_id=2085351933]
+target_position = Vector2(700, 0)
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam_Emitter" index="1" unique_id=1219573650]
+shape = SubResource("CircleShape2D_6a8el")
+
+[node name="Beam" type="Node2D" parent="Beam_Emitter" index="2" unique_id=673774649]
+script = ExtResource("2_ar6ir")
+
+[node name="BeamPoly" parent="Beam_Emitter/Beam" index="0" unique_id=1384251498 instance=ExtResource("2_3e1ps")]

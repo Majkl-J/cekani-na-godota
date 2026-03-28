@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://b8mj0h3r60w1g"]
+
+[ext_resource type="Script" uid="uid://2a2xr2vprbfq" path="res://scenes/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://c1pteupmcwq2p" path="res://icons/ui/gear-solid.png" id="2_vjb58"]
+[ext_resource type="Script" uid="uid://ctxe1cdfrjq5k" path="res://scenes/volume_slider.gd" id="3_con2f"]
+
+[node name="Menu" type="Node" unique_id=1811391334]
+script = ExtResource("1_yqeox")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1010772340]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.04650879
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="." unique_id=699721417]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 598.0
+offset_right = -1146.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hrát"
+
+[node name="Settings" type="Button" parent="." unique_id=1249098507]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 142.0
+offset_top = 598.0
+offset_right = -1027.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Settings" unique_id=1036449623]
+layout_mode = 0
+offset_right = 111.0
+offset_bottom = 108.0
+texture = ExtResource("2_vjb58")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="SettingsMenu" type="VBoxContainer" parent="." unique_id=689073934]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 268.0
+offset_top = 244.0
+offset_right = -550.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="SettingsMenu" unique_id=85473339]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/HSplitContainer" unique_id=157273209]
+layout_mode = 2
+text = "Hlasitost"
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsMenu/HSplitContainer" unique_id=1473338804]
+layout_mode = 2
+value = 50.0
+script = ExtResource("3_con2f")
+
+[node name="Label2" type="Label" parent="SettingsMenu" unique_id=1160672394]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsMenu" unique_id=2141463743]
+layout_mode = 2
+text = "Proč jinak měnit dokonalost?"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="value_changed" from="SettingsMenu/HSplitContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]

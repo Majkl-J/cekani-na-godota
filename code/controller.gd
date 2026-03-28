@@ -5,7 +5,14 @@ var used_left_hint: bool = false
 var used_right_hint: bool = false
 var used_jump_hint: bool = false
 
+var first_scene = "res://scenes/menu.tscn"
 var first_level = "res://scenes/rooms/room_1.tscn"
+
+var volume = 50
+
+func set_volume(new_volume: float):
+	volume = new_volume
+	print("Volume now ", volume)
 
 var walk_door_id = -1
 var preloaded_player: Resource = preload("res://mobs/blorbo.tscn")
@@ -35,8 +42,11 @@ func get_max_len():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_level(first_level)
+	load_level(first_scene)
 	pass # Replace with function body.
+
+func load_actual_game():
+	load_level(first_level)
 
 func load_level(path):
 	var f = load(path)

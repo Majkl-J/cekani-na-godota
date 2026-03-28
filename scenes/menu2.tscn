@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://btfviho3v58sj"]
+
+[node name="Node" type="Node" unique_id=2069992727]
+
+[node name="Start" type="Button" parent="." unique_id=61365]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 54.0
+offset_right = -469.0
+offset_bottom = -379.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hrát"
+
+[node name="Settings" type="Button" parent="." unique_id=645728240]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 305.0
+offset_right = -469.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nastavení"

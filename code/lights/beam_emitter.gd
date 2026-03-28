@@ -6,13 +6,8 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.pressed:
-			if Input.is_action_just_pressed("test_a"):
-				rotate(0.1);
-			if Input.is_action_just_pressed("test_b"):
-				rotate(-0.1);;
+func add_exception(except: CollisionObject2D):
+	$RayCast.add_exception(except)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -22,7 +17,7 @@ func _process(delta: float) -> void:
 			var light_collider: AbstractLightHandler = collider
 			light_collider._handle_light_collision(global_position, self)
 		var collision_loc: Vector2 = $RayCast.get_collision_point()
-		var distance = position.distance_to(collision_loc)
+		var distance = global_position.distance_to(collision_loc)
 		if($Beam.get_current_length() == distance):
 			return
 		$Beam.set_current_length(distance)

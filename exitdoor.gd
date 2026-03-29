@@ -27,5 +27,6 @@ func _process(delta: float) -> void:
 func _on_interaction_object_area_interacted_with(event: InputEvent, player: Player) -> void:
 	if Input.is_action_just_pressed("open"):
 		if open && $"/root/controller".get_main_node().get_meta("room_id") == 1:
-			#load scene here
+			var s = load("res://scenes/credits.tscn")
+			get_tree().change_scene_to_packed(s)
 			return

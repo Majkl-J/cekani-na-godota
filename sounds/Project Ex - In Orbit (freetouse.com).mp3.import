@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxjvd4disjhdr"
+path="res://.godot/imported/Project Ex - In Orbit (freetouse.com).mp3-7e668616aa4a4972ea4e9959da94f6a3.mp3str"
+
+[deps]
+
+source_file="res://sounds/Project Ex - In Orbit (freetouse.com).mp3"
+dest_files=["res://.godot/imported/Project Ex - In Orbit (freetouse.com).mp3-7e668616aa4a4972ea4e9959da94f6a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b5fkimjdsd4qm"]
+
+[ext_resource type="Script" uid="uid://dtg7sf1ipv21f" path="res://scenes/credits.gd" id="1_kyhnv"]
+[ext_resource type="Texture2D" uid="uid://bvcpjyocutquj" path="res://icons/Menu_background-1.png" id="1_mah5v"]
+[ext_resource type="Texture2D" uid="uid://dv3dm3rbhqctx" path="res://icons/Menu_background-2.png" id="2_kyhnv"]
+[ext_resource type="Texture2D" uid="uid://bi1gb2wn13ivj" path="res://icons/Menu_background-3.png" id="3_ooihk"]
+[ext_resource type="Texture2D" uid="uid://iibbvjq34d71" path="res://icons/Menu_background-4.png" id="4_ih6pn"]
+[ext_resource type="Texture2D" uid="uid://7olfbx6svx7h" path="res://icons/Menu_background-5.png" id="5_7lgdl"]
+[ext_resource type="Texture2D" uid="uid://c0v4oo4v628pc" path="res://icons/Menu_background-6.png" id="6_c6kru"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qbfqv"]
+frames = 6
+frame_0/texture = ExtResource("1_mah5v")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("2_kyhnv")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("3_ooihk")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("4_ih6pn")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("5_7lgdl")
+frame_4/duration = 0.2
+frame_5/texture = ExtResource("6_c6kru")
+frame_5/duration = 0.2
+
+[node name="Node2D" type="Node2D" unique_id=38280876]
+script = ExtResource("1_kyhnv")
+
+[node name="Background" type="TextureRect" parent="." unique_id=651400050]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.023254395
+offset_top = -0.5
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_qbfqv")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1245225204]
+offset_left = 343.0
+offset_top = 287.0
+offset_right = 959.0
+offset_bottom = 445.0
+bbcode_enabled = true
+text = "[b][font_size=32]Děkujeme za dohrání[/font_size][/b]
+
+[font_size=25]Hru vytvořili:
+Ivan Metelka   Klára Metelková  Michal Vícha[/font_size]"
+horizontal_alignment = 1
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=1254043086]
+offset_right = 1280.0
+offset_bottom = 718.0
+color = Color(0, 0, 0, 1)

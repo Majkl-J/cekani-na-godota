@@ -1,14 +1,15 @@
-[gd_scene format=3 uid="uid://b8mj0h3r60w1g"]
+[gd_scene format=3 uid="uid://djoisfm8bkk04"]
 
-[ext_resource type="Script" uid="uid://2a2xr2vprbfq" path="res://scenes/menu.gd" id="1_yqeox"]
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://bvcpjyocutquj" path="res://icons/Menu_background-1.png" id="2_i6lef"]
 [ext_resource type="Texture2D" uid="uid://c1pteupmcwq2p" path="res://icons/ui/gear-solid.png" id="2_vjb58"]
 [ext_resource type="Texture2D" uid="uid://dv3dm3rbhqctx" path="res://icons/Menu_background-2.png" id="3_70i5f"]
-[ext_resource type="Script" uid="uid://ctxe1cdfrjq5k" path="res://scenes/volume_slider.gd" id="3_con2f"]
+[ext_resource type="Script" path="res://scenes/volume_slider.gd" id="3_con2f"]
 [ext_resource type="Texture2D" uid="uid://bi1gb2wn13ivj" path="res://icons/Menu_background-3.png" id="4_mj5lg"]
 [ext_resource type="Texture2D" uid="uid://iibbvjq34d71" path="res://icons/Menu_background-4.png" id="5_ufwb2"]
 [ext_resource type="Texture2D" uid="uid://7olfbx6svx7h" path="res://icons/Menu_background-5.png" id="6_6cdou"]
 [ext_resource type="Texture2D" uid="uid://c0v4oo4v628pc" path="res://icons/Menu_background-6.png" id="7_i42df"]
+[ext_resource type="Texture2D" uid="uid://t4pn802qgbyl" path="res://icons/Logo.png" id="10_70i5f"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_7jp70"]
 frames = 6
@@ -39,6 +40,14 @@ grow_vertical = 2
 texture = SubResource("AnimatedTexture_7jp70")
 expand_mode = 2
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1679340566]
+offset_left = 45.0
+offset_top = 640.0
+offset_right = 97.0
+offset_bottom = 669.0
+bbcode_enabled = true
+text = "[font_size=20]Hrát[/font_size]"
+
 [node name="Start" type="Button" parent="." unique_id=699721417]
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,7 +58,6 @@ offset_right = -1146.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Hrát"
 
 [node name="Settings" type="Button" parent="." unique_id=1249098507]
 anchors_preset = 15
@@ -103,6 +111,11 @@ text = "Proč jinak měnit dokonalost?"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=253409587]
 position = Vector2(641, 359)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=671795002]
+position = Vector2(615, 329)
+scale = Vector2(0.8601852, 0.8601852)
+texture = ExtResource("10_70i5f")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

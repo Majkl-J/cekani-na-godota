@@ -19,6 +19,7 @@ const JUMP_VELOCITY = -400.0
 @onready var left_hint = $HintContainer/LeftHint
 @onready var right_hint = $HintContainer/RightHint
 @onready var jump_hint = $HintContainer/JumpHint
+@onready var flash_hint = $HintContainer/FlashHint
 
 var is_in_space = false
 
@@ -34,6 +35,8 @@ func _ready() -> void:
 		right_hint.visible = not $"/root/controller".used_right_hint
 	if jump_hint != null:
 		jump_hint.visible = not $"/root/controller".used_jump_hint
+	if flash_hint != null:
+		flash_hint.visible = not $"/root/controller".used_flash_hint
 
 func _process(delta: float) -> void:
 	# Pro nápovědu na začátku hry, pak už nee
@@ -49,6 +52,10 @@ func _process(delta: float) -> void:
 		if jump_hint != null:
 			jump_hint.visible = false
 		$"/root/controller".used_jump_hint = true
+	if Input.is_action_just_pressed("flashlight_toggle"):
+		if flash_hint != null:
+			flash_hint.visible = false
+		$"/root/controller".used_flash_hint = true
 	update_flashlight(delta)
 
 func _unhandled_input(event: InputEvent) -> void:

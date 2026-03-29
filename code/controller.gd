@@ -4,6 +4,8 @@ class_name MasterController extends Node
 var used_left_hint: bool = false
 var used_right_hint: bool = false
 var used_jump_hint: bool = false
+var used_flash_hint: bool = false
+
 
 var first_scene = "res://scenes/menu.tscn"
 var first_level = "res://scenes/rooms/room_1.tscn"

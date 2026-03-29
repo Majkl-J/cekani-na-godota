@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bhuacynqf2rw8"]
+
+[ext_resource type="PackedScene" uid="uid://bg2ixflt08inj" path="res://object/interaction_popups/interactable_popup.tscn" id="1_6co1g"]
+[ext_resource type="Texture2D" uid="uid://cq7yxt7ct8mp6" path="res://icons/Ečko.png" id="2_3r3bw"]
+
+[node name="InteractablePopup" unique_id=1318575568 instance=ExtResource("1_6co1g")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1282097590]
+texture = ExtResource("2_3r3bw")

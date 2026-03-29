@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d1qsrh1fessj5"]
+
+[ext_resource type="Script" uid="uid://evalkp6gto7r" path="res://mobs/interaction_object_area.gd" id="2_lnsu8"]
+[ext_resource type="Texture2D" uid="uid://dg5awge7mod0y" path="res://icons/Budík_false.png" id="2_p7t65"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5lrh"]
+radius = 26.819174
+
+[node name="Budik" type="Node2D" unique_id=1610088403]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1307816478]
+scale = Vector2(0.010185189, 0.010185188)
+texture = ExtResource("2_p7t65")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=176008196]
+visible = false
+offset_right = 68.5
+offset_bottom = 31.0
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractionObjectArea" type="Area2D" parent="." unique_id=1867521939]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_lnsu8")
+metadata/interaction_type = "E"
+
+[node name="InteractionNode" type="CollisionShape2D" parent="InteractionObjectArea" unique_id=2055505352]
+shape = SubResource("CircleShape2D_y5lrh")
+
+[node name="InteractablePopup" type="Node2D" parent="InteractionObjectArea" unique_id=145207882]
+z_index = 20
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionObjectArea/InteractablePopup" unique_id=106747995]
+position = Vector2(0, -60)
+scale = Vector2(0.021240236, 0.021240236)
+
+[connection signal="body_entered" from="InteractionObjectArea" to="InteractionObjectArea" method="_on_body_entered"]

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bf2klqttagicr" path="res://icons/Skříňka.png" id="3_y5lrh"]
 [ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="4_ow1e4"]
 [ext_resource type="Texture2D" uid="uid://cb2l8u055g6uj" path="res://icons/Hodiny.png" id="6_wtcj1"]
-[ext_resource type="Texture2D" uid="uid://dmfcr2xt3olbv" path="res://icons/Budík.png" id="7_38fm3"]
+[ext_resource type="PackedScene" uid="uid://d1qsrh1fessj5" path="res://mobs/budik.tscn" id="7_y5lrh"]
 [ext_resource type="Texture2D" uid="uid://cwu3ou38kto4y" path="res://icons/Zamek1.png" id="8_y5lrh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
@@ -71,13 +71,11 @@ position = Vector2(-0.22326231, -0.2232213)
 scale = Vector2(0.26762468, 0.26744378)
 texture = ExtResource("6_wtcj1")
 
-[node name="budík" type="Sprite2D" parent="Room" unique_id=1648163973]
-position = Vector2(-8.106232e-06, -8.106232e-06)
-scale = Vector2(0.2678571, 0.26785713)
-texture = ExtResource("7_38fm3")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="Room" unique_id=503732223]
 color = Color(0.026220527, 0.17900863, 0.4674787, 1)
+
+[node name="Budik" parent="Room" unique_id=1610088403 instance=ExtResource("7_y5lrh")]
+position = Vector2(-96.42857, 39.732143)
 
 [node name="Zamek1" type="Sprite2D" parent="." unique_id=25934277]
 position = Vector2(-1.0000153, -2.5)

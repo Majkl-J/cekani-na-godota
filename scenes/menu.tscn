@@ -1,8 +1,29 @@
 [gd_scene format=3 uid="uid://b8mj0h3r60w1g"]
 
 [ext_resource type="Script" uid="uid://2a2xr2vprbfq" path="res://scenes/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://bvcpjyocutquj" path="res://icons/Menu_background-1.png" id="2_i6lef"]
 [ext_resource type="Texture2D" uid="uid://c1pteupmcwq2p" path="res://icons/ui/gear-solid.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://dv3dm3rbhqctx" path="res://icons/Menu_background-2.png" id="3_70i5f"]
 [ext_resource type="Script" uid="uid://ctxe1cdfrjq5k" path="res://scenes/volume_slider.gd" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://bi1gb2wn13ivj" path="res://icons/Menu_background-3.png" id="4_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://iibbvjq34d71" path="res://icons/Menu_background-4.png" id="5_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://7olfbx6svx7h" path="res://icons/Menu_background-5.png" id="6_6cdou"]
+[ext_resource type="Texture2D" uid="uid://c0v4oo4v628pc" path="res://icons/Menu_background-6.png" id="7_i42df"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_7jp70"]
+frames = 6
+frame_0/texture = ExtResource("2_i6lef")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("3_70i5f")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("4_mj5lg")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("5_ufwb2")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("6_6cdou")
+frame_4/duration = 0.2
+frame_5/texture = ExtResource("7_i42df")
+frame_5/duration = 0.2
 
 [node name="Menu" type="Node" unique_id=1811391334]
 script = ExtResource("1_yqeox")
@@ -15,6 +36,8 @@ offset_right = -0.04650879
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = SubResource("AnimatedTexture_7jp70")
+expand_mode = 2
 
 [node name="Start" type="Button" parent="." unique_id=699721417]
 anchors_preset = 15
@@ -77,6 +100,9 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsMenu" unique_id=2141463743]
 layout_mode = 2
 text = "Proč jinak měnit dokonalost?"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=253409587]
+position = Vector2(641, 359)
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

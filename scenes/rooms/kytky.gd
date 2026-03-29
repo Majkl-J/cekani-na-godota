@@ -8,31 +8,35 @@ extends Node
 
 var correct_order = [1, 3, 2, 4]
 var current_step = 0
-var puzzle_finished = false
+
+func _ready() -> void:
+	if($"/root/controller".flowers_complete):
+		kytka1.force_done()
+		kytka2.force_done()
+		kytka3.force_done()
+		kytka4.force_done()
+		zamek1.visible = false
+		return
+	correct_order.shuffle()
 
 func flower_pressed(flower_id: int):
-	if puzzle_finished:
-		print("puzzle uz hotovy")
+	if $"/root/controller".flowers_complete:
 		return
 
 	if current_step >= correct_order.size():
-		puzzle_finished = true
-		print("puzzle uz hotovy")
+		$"/root/controller".flowers_complete = true
 		return
 
 	if flower_id == correct_order[current_step]:
-		print("spravne")
 		var flower = get_flower_by_id(flower_id)
 		if flower != null:
 			flower.play_correct()
 		current_step += 1
 
 		if current_step >= correct_order.size():
-			puzzle_finished = true
-			print("HOTOVO")
+			$"/root/controller".flowers_complete = true
 			puzzle_done()
 	else:
-		print("spatne")
 		reset_puzzle()
 
 func get_flower_by_id(flower_id):
@@ -44,7 +48,7 @@ func get_flower_by_id(flower_id):
 	return null
 
 func reset_puzzle():
-	if puzzle_finished:
+	if $"/root/controller".flowers_complete:
 		return
 
 	current_step = 0
@@ -54,6 +58,5 @@ func reset_puzzle():
 	kytka4.set_default()
 
 func puzzle_done():
-	print("PUZZLE SPLNEN")
 	if zamek1 != null:
 		zamek1.visible = false

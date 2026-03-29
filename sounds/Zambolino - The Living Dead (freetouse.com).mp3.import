@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvmov6dnen5lj"
+path="res://.godot/imported/Zambolino - The Living Dead (freetouse.com).mp3-b48a70a022ea2f45943d76d9e68a6c88.mp3str"
+
+[deps]
+
+source_file="res://sounds/Zambolino - The Living Dead (freetouse.com).mp3"
+dest_files=["res://.godot/imported/Zambolino - The Living Dead (freetouse.com).mp3-b48a70a022ea2f45943d76d9e68a6c88.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

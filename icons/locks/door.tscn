@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d1j10ppyadabp"]
+
+[ext_resource type="PackedScene" uid="uid://cih3nnuen076a" path="res://icons/locks/zamek_1.tscn" id="1_mk16v"]
+[ext_resource type="Texture2D" uid="uid://co2xuvlpe5he5" path="res://icons/Dveře.png" id="2_71oon"]
+
+[node name="door" unique_id=1575885070 instance=ExtResource("1_mk16v")]
+texture = ExtResource("2_71oon")

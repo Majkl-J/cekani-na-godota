@@ -4,7 +4,6 @@ extends Node
 @onready var kytka2 = $"../kytka2"
 @onready var kytka3 = $"../kytka3"
 @onready var kytka4 = $"../kytka4"
-@onready var zamek1 = $"../Zamek1"
 
 var correct_order = [1, 3, 2, 4]
 var current_step = 0
@@ -15,7 +14,6 @@ func _ready() -> void:
 		kytka2.force_done()
 		kytka3.force_done()
 		kytka4.force_done()
-		zamek1.visible = false
 		return
 	correct_order.shuffle()
 
@@ -58,5 +56,4 @@ func reset_puzzle():
 	kytka4.set_default()
 
 func puzzle_done():
-	if zamek1 != null:
-		zamek1.visible = false
+	$"/root/controller".complete_flowers()

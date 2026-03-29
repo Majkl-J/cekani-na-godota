@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cw3yrgdd6t5g6"]
+
+[ext_resource type="Script" uid="uid://c0dohkemlcb0d" path="res://mobs/budik.gd" id="1_26bdq"]
+[ext_resource type="PackedScene" uid="uid://cx22ayvnvka8s" path="res://object/interaction_popups/interaction_object_area.tscn" id="2_26bdq"]
+[ext_resource type="Texture2D" uid="uid://dg5awge7mod0y" path="res://icons/Budík_false.png" id="2_p7t65"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7t65"]
+bg_color = Color(0.6582036, 0.68901634, 0.68901634, 1)
+
+[node name="Budik" type="Node2D" unique_id=1610088403]
+script = ExtResource("1_26bdq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1307816478]
+scale = Vector2(0.010185189, 0.010185188)
+texture = ExtResource("2_p7t65")
+
+[node name="InteractionObjectArea" parent="." unique_id=1251555229 instance=ExtResource("2_26bdq")]
+
+[node name="BudikControl" type="Control" parent="." unique_id=1752444386]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 96.42857
+offset_top = -39.732143
+offset_right = 136.42857
+offset_bottom = 0.2678566
+
+[node name="Panel" type="Panel" parent="BudikControl" unique_id=426793155]
+z_index = 100
+z_as_relative = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.1000001
+anchor_top = -0.85
+anchor_right = 2.125
+anchor_bottom = 0.85
+theme_override_styles/panel = SubResource("StyleBoxFlat_p7t65")
+
+[node name="LineEdit" type="LineEdit" parent="BudikControl/Panel" unique_id=1124482011]
+layout_mode = 0
+offset_right = 170.51645
+offset_bottom = 68.94606
+placeholder_text = "Time?"
+
+[connection signal="interacted_with" from="InteractionObjectArea" to="." method="_on_interaction_object_interacted_with"]
+[connection signal="text_submitted" from="BudikControl/Panel/LineEdit" to="." method="_on_line_edit_text_submitted"]

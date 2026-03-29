@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bg2ixflt08inj"]
+
+[node name="InteractablePopup" type="Node2D" unique_id=1318575568]
+z_index = 20
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1282097590]
+position = Vector2(0, -60)
+scale = Vector2(0.021240236, 0.021240236)

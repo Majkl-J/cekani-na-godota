@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cih3nnuen076a"]
+
+[ext_resource type="Texture2D" uid="uid://cwu3ou38kto4y" path="res://icons/Zamek1.png" id="1_xeh7h"]
+
+[node name="zamek_1" type="Sprite2D" unique_id=1575885070]
+texture = ExtResource("1_xeh7h")

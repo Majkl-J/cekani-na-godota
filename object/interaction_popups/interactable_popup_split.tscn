@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cupfmnfcehiv8"]
+
+[ext_resource type="PackedScene" uid="uid://drveb6sw85i3h" path="res://object/interaction_popups/interactable_popup_mirr.tscn" id="1_mvyss"]
+[ext_resource type="Texture2D" uid="uid://q62lk5pw0g33" path="res://icons/W.png" id="2_rvt08"]
+[ext_resource type="Texture2D" uid="uid://1drromls6dgd" path="res://icons/Q.png" id="3_rvt08"]
+
+[node name="InteractablePopup" unique_id=1318575568 instance=ExtResource("1_mvyss")]
+
+[node name="W" type="Sprite2D" parent="." index="2" unique_id=2071225041]
+position = Vector2(20, -100)
+scale = Vector2(0.021240236, 0.021240236)
+texture = ExtResource("2_rvt08")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." index="3" unique_id=462792963]
+position = Vector2(-20, -100)
+scale = Vector2(0.021240236, 0.021240236)
+texture = ExtResource("3_rvt08")

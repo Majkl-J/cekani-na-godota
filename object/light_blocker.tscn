@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c2vivsrl4o0my"]
+[gd_scene format=3 uid="uid://dhjkedqkuohps"]
 
 [ext_resource type="Texture2D" uid="uid://bf0n5oyd6y7cr" path="res://icons/Bariéry_1.png" id="1_g7irj"]
 
@@ -6,7 +6,7 @@
 size = Vector2(73.33333, 416.6667)
 
 [node name="Light_Blocker" type="StaticBody2D" unique_id=71224044]
-z_index = 11
+z_index = 1
 z_as_relative = false
 scale = Vector2(0.3, 0.3)
 collision_layer = 8

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://iibbvjq34d71" path="res://icons/Menu_background-4.png" id="5_ufwb2"]
 [ext_resource type="Texture2D" uid="uid://7olfbx6svx7h" path="res://icons/Menu_background-5.png" id="6_6cdou"]
 [ext_resource type="Texture2D" uid="uid://c0v4oo4v628pc" path="res://icons/Menu_background-6.png" id="7_i42df"]
+[ext_resource type="Texture2D" uid="uid://t4pn802qgbyl" path="res://icons/Logo.png" id="10_70i5f"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_7jp70"]
 frames = 6
@@ -110,6 +111,11 @@ text = "Proč jinak měnit dokonalost?"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=253409587]
 position = Vector2(641, 359)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=671795002]
+position = Vector2(615, 329)
+scale = Vector2(0.8601852, 0.8601852)
+texture = ExtResource("10_70i5f")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

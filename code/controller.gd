@@ -12,6 +12,8 @@ var first_level = "res://scenes/rooms/room_1.tscn"
 
 var volume = 50
 
+var block_movement = false
+
 func set_volume(new_volume: float):
 	volume = new_volume
 	print("Volume now ", volume)
@@ -123,4 +125,20 @@ func load_and_move_to_room(room_path: String):
 func get_walk_door_id():
 	return walk_door_id
 
+var exit: ExitDoor = null
+
 static var flowers_complete: bool = false
+static var budik_complete: bool = false
+static var lights_complete: bool = false
+
+func complete_flowers():
+	flowers_complete = true
+	exit.update_locks()
+
+func complete_budik():
+	budik_complete = true
+	exit.update_locks()
+
+func complete_lights():
+	lights_complete = true
+	exit.update_locks()

@@ -6,10 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bf2klqttagicr" path="res://icons/Skříňka.png" id="3_y5lrh"]
 [ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="4_ow1e4"]
 [ext_resource type="Texture2D" uid="uid://cb2l8u055g6uj" path="res://icons/Hodiny.png" id="6_wtcj1"]
-[ext_resource type="PackedScene" uid="uid://d1qsrh1fessj5" path="res://mobs/budik.tscn" id="7_y5lrh"]
-[ext_resource type="Texture2D" uid="uid://dmfcr2xt3olbv" path="res://icons/Budík.png" id="7_38fm3"]
+[ext_resource type="PackedScene" uid="uid://cw3yrgdd6t5g6" path="res://mobs/budik.tscn" id="7_y5lrh"]
 [ext_resource type="Texture2D" uid="uid://p5hq0w07vt0g" path="res://icons/Hodiny_glow.png" id="8_ow1e4"]
-[ext_resource type="Texture2D" uid="uid://cwu3ou38kto4y" path="res://icons/Zamek1.png" id="8_y5lrh"]
+[ext_resource type="PackedScene" uid="uid://dflk0b0tkqd61" path="res://exit.tscn" id="10_wtcj1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -100.44643
@@ -26,6 +25,9 @@ distance = -256.56412
 normal = Vector2(-0.00462958, 0.99998933)
 distance = -126.78639
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ow1e4"]
+light_mode = 2
+
 [node name="Room1" type="Node2D" unique_id=45653194]
 script = ExtResource("1_wodat")
 metadata/room_id = 1
@@ -37,6 +39,10 @@ scale = Vector2(2.24, 2.24)
 position = Vector2(0.446417, -0.4464317)
 scale = Vector2(0.2678571, 0.26785716)
 texture = ExtResource("2_aq8op")
+
+[node name="Door" parent="Room" unique_id=780828187 instance=ExtResource("10_wtcj1")]
+position = Vector2(-184.375, 29.017857)
+scale = Vector2(0.44642857, 0.44642857)
 
 [node name="skříňka" type="Sprite2D" parent="Room" unique_id=358661889]
 position = Vector2(0.22320169, -1.5616417e-05)
@@ -68,18 +74,23 @@ shape = SubResource("WorldBoundaryShape2D_cg05x")
 [node name="RoomCamera" type="Camera2D" parent="Room" unique_id=950895562]
 scale = Vector2(0.44642857, 0.44642857)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Room" unique_id=503732223]
+color = Color(0.026220527, 0.17900863, 0.4674787, 1)
+
 [node name="hodiny off" type="Sprite2D" parent="Room" unique_id=1092385139]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(-0.22326231, -0.2232213)
 scale = Vector2(0.26762468, 0.26744378)
 texture = ExtResource("6_wtcj1")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Room" unique_id=503732223]
-color = Color(0.026220527, 0.17900863, 0.4674787, 1)
+[node name="hodiny on" type="Sprite2D" parent="Room" unique_id=1192814125]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_ow1e4")
+position = Vector2(-0.22325516, -0.2232211)
+scale = Vector2(0.26762468, 0.26744378)
+texture = ExtResource("8_ow1e4")
 
 [node name="Budik" parent="Room" unique_id=1610088403 instance=ExtResource("7_y5lrh")]
 position = Vector2(-96.42857, 39.732143)
-
-[node name="Zamek1" type="Sprite2D" parent="." unique_id=25934277]
-position = Vector2(-1.0000153, -2.5)
-scale = Vector2(0.6010416, 0.6009259)
-texture = ExtResource("8_y5lrh")

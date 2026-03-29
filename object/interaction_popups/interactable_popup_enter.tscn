@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://tmikjkj4kacl"]
+
+[ext_resource type="PackedScene" uid="uid://bg2ixflt08inj" path="res://object/interaction_popups/interactable_popup.tscn" id="1_ori8f"]
+[ext_resource type="Texture2D" uid="uid://cf3f345qp6ek3" path="res://icons/Enter.png" id="2_r6lra"]
+
+[node name="InteractablePopupEnter" unique_id=1318575568 instance=ExtResource("1_ori8f")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1282097590]
+texture = ExtResource("2_r6lra")

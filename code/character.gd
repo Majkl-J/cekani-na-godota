@@ -78,6 +78,8 @@ func tryOpenDoor():
 	return
 
 func _physics_process(delta: float) -> void:
+	if($"/root/controller".block_movement):
+		return
 	if(not is_in_space):
 		default_phys(delta)
 	else:

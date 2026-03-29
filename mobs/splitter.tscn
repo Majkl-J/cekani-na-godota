@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://cu6t7cimj1jjm"]
+[gd_scene format=3 uid="uid://da66qice88cem"]
 
-[ext_resource type="Script" uid="uid://cvwwdoeolvw57" path="res://code/lights/splitter.gd" id="1_35oxi"]
+[ext_resource type="Script" path="res://code/lights/splitter.gd" id="1_35oxi"]
 [ext_resource type="Texture2D" uid="uid://d2yc2rufmu5xp" path="res://icons/light/splitter_off.png" id="2_304ta"]
 [ext_resource type="PackedScene" uid="uid://tvr7dlxowya7" path="res://scenes/beam_emitter.tscn" id="3_304ta"]
+[ext_resource type="PackedScene" uid="uid://cx22ayvnvka8s" path="res://object/interaction_popups/interaction_object_area.tscn" id="4_srpq1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_35oxi"]
 a = Vector2(0, -22)
@@ -40,3 +41,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisonInteraction" unique_id=942162554]
 shape = SubResource("CapsuleShape2D_304ta")
+
+[node name="InteractionObjectArea" parent="." unique_id=1251555229 instance=ExtResource("4_srpq1")]
+metadata/interaction_type = "SPLITTER"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cs617oiwt05w3" path="res://code/lights/mirror.gd" id="1_u2tw1"]
 [ext_resource type="Texture2D" uid="uid://dk5eiri4apfx7" path="res://icons/light/mirror_dim.png" id="2_ssj6h"]
+[ext_resource type="PackedScene" uid="uid://cx22ayvnvka8s" path="res://object/interaction_popups/interaction_object_area.tscn" id="3_ssj6h"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_km8ef"]
 a = Vector2(0, -29)
@@ -37,3 +38,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisonInteraction" unique_id=356478898]
 shape = SubResource("CapsuleShape2D_u2tw1")
+
+[node name="InteractionObjectArea" parent="." unique_id=1251555229 instance=ExtResource("3_ssj6h")]
+metadata/interaction_type = "MIRROR"

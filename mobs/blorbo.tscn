@@ -147,8 +147,10 @@ texture = ExtResource("16_e201i")
 [node name="FlashlightPivot" type="Node2D" parent="." unique_id=291783483]
 
 [node name="Flashlight" type="PointLight2D" parent="FlashlightPivot" unique_id=1417247687]
+light_mask = 3
 position = Vector2(84.99999, -55.499996)
 scale = Vector2(0.40608722, 0.40608713)
 energy = 1.5
+range_item_cull_mask = 3
 texture = ExtResource("16_oubap")
 texture_scale = 0.6

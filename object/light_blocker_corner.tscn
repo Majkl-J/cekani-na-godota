@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://04aw4vb2ixy2"]
+[gd_scene format=3 uid="uid://c0t1pv6s62vbr"]
 
 [ext_resource type="Texture2D" uid="uid://d23433a7cnof6" path="res://icons/Bariéry_2.png" id="1_4k4ja"]
 
 [node name="LightBlockerCorner" type="StaticBody2D" unique_id=139670392]
-z_index = 11
+z_index = 1
 z_as_relative = false
 scale = Vector2(0.3, 0.3)
 collision_layer = 8

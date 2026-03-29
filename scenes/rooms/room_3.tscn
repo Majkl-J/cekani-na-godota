@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_g5ssp"]
 [ext_resource type="Texture2D" uid="uid://425oqn07uhr6" path="res://icons/3.scena.png" id="2_hfp1j"]
+[ext_resource type="PackedScene" uid="uid://dflk0b0tkqd61" path="res://exit.tscn" id="3_8h8r0"]
 [ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="3_hfp1j"]
 [ext_resource type="PackedScene" uid="uid://36xkowmvw4db" path="res://mobs/mirror.tscn" id="4_hfp1j"]
 [ext_resource type="PackedScene" uid="uid://tvr7dlxowya7" path="res://scenes/beam_emitter.tscn" id="5_d8ufh"]
-[ext_resource type="PackedScene" path="res://mobs/star.tscn" id="6_d8ufh"]
-[ext_resource type="PackedScene" path="res://mobs/activated_blocker.tscn" id="7_5bkl7"]
-[ext_resource type="PackedScene" uid="uid://04aw4vb2ixy2" path="res://object/light_blocker_corner.tscn" id="8_wynrr"]
-[ext_resource type="PackedScene" path="res://mobs/splitter.tscn" id="9_wmuqe"]
+[ext_resource type="PackedScene" uid="uid://b55lsrrvhrnpx" path="res://mobs/star.tscn" id="6_d8ufh"]
+[ext_resource type="PackedScene" uid="uid://d2a221pkhug5g" path="res://mobs/activated_blocker.tscn" id="7_5bkl7"]
+[ext_resource type="PackedScene" uid="uid://c0t1pv6s62vbr" path="res://object/light_blocker_corner.tscn" id="8_wynrr"]
+[ext_resource type="PackedScene" uid="uid://da66qice88cem" path="res://mobs/splitter.tscn" id="9_wmuqe"]
+[ext_resource type="PackedScene" uid="uid://dhjkedqkuohps" path="res://object/light_blocker.tscn" id="11_6lc7h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
 distance = -123.0
@@ -36,6 +38,11 @@ scale = Vector2(2.24, 2.24)
 position = Vector2(0.446417, -0.4464317)
 scale = Vector2(0.2678571, 0.26785716)
 texture = ExtResource("2_hfp1j")
+
+[node name="Door" parent="Room" unique_id=780828187 instance=ExtResource("3_8h8r0")]
+position = Vector2(181.25, 79.46427)
+rotation = 1.2479104
+scale = Vector2(0.44642857, 0.44642857)
 
 [node name="rámeček" type="Sprite2D" parent="Room" unique_id=1772104089]
 position = Vector2(-1.7166138e-05, -0.44642353)
@@ -86,3 +93,31 @@ rotation = -1.5446163
 
 [node name="Splitter" parent="." unique_id=505479904 instance=ExtResource("9_wmuqe")]
 position = Vector2(73, 53)
+
+[node name="Light_Blocker" parent="." unique_id=71224044 instance=ExtResource("11_6lc7h")]
+position = Vector2(237, 35)
+
+[node name="ActivatedBlocker2" parent="." unique_id=1318569839 instance=ExtResource("7_5bkl7")]
+position = Vector2(194, 139)
+rotation = 0.80285144
+metadata/id = 2
+
+[node name="Star2" parent="." unique_id=1829836444 instance=ExtResource("6_d8ufh")]
+position = Vector2(366, -98)
+metadata/id = 2
+
+[node name="Light_Blocker2" parent="." unique_id=2089870831 instance=ExtResource("11_6lc7h")]
+position = Vector2(238.00002, -92)
+
+[node name="Mirror2" parent="." unique_id=1253096485 instance=ExtResource("4_hfp1j")]
+position = Vector2(244, -229.00002)
+rotation = 3.1415927
+metadata/upper_limit = 200.0
+metadata/lower_limit = 45.0
+
+[node name="Light_Blocker3" parent="." unique_id=1664535345 instance=ExtResource("11_6lc7h")]
+position = Vector2(67, -225)
+
+[node name="Light_Blocker4" parent="." unique_id=823872079 instance=ExtResource("11_6lc7h")]
+position = Vector2(311, 56)
+rotation = 1.5707964

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://3gq3imngukq"]
+
+[ext_resource type="PackedScene" uid="uid://bfo2ra2namn6w" path="res://icons/locks/zamek_2.tscn" id="1_u8mvo"]
+[ext_resource type="Texture2D" uid="uid://dwou8q0ju4j2h" path="res://icons/Zamek3.png" id="2_npqcu"]
+[ext_resource type="Script" uid="uid://cspgpdjqpm1po" path="res://icons/locks/light_lock.gd" id="3_8f8fh"]
+[ext_resource type="Texture2D" uid="uid://c85ij6ht2k4fs" path="res://icons/Hvězda_-1.png" id="4_58k8w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8f8fh"]
+radius = 56.0
+
+[node name="Zamek3" unique_id=1947323647 instance=ExtResource("1_u8mvo")]
+texture = ExtResource("2_npqcu")
+
+[node name="LightLock" type="StaticBody2D" parent="." index="0" unique_id=1493739690]
+position = Vector2(-655, 274)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_8f8fh")
+metadata/_custom_type_script = "uid://dbq0po6vl1ju8"
+
+[node name="Hvězda1" type="Sprite2D" parent="LightLock" index="0" unique_id=379948272]
+position = Vector2(27.000002, 40)
+rotation = -0.2617994
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_58k8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightLock" index="1" unique_id=548551437]
+shape = SubResource("CircleShape2D_8f8fh")

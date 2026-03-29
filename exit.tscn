@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dflk0b0tkqd61"]
+
+[ext_resource type="Texture2D" uid="uid://co2xuvlpe5he5" path="res://icons/Dveře.png" id="1_6sfst"]
+[ext_resource type="Script" uid="uid://bqsdg1dswf41r" path="res://exitdoor.gd" id="1_d0uvg"]
+[ext_resource type="PackedScene" uid="uid://cih3nnuen076a" path="res://icons/locks/zamek_1.tscn" id="2_pinn1"]
+[ext_resource type="PackedScene" uid="uid://bfo2ra2namn6w" path="res://icons/locks/zamek_2.tscn" id="3_d0uvg"]
+[ext_resource type="PackedScene" uid="uid://3gq3imngukq" path="res://icons/locks/zamek_3.tscn" id="4_286a5"]
+[ext_resource type="PackedScene" uid="uid://cx22ayvnvka8s" path="res://object/interaction_popups/interaction_object_area.tscn" id="6_286a5"]
+
+[node name="Door" type="StaticBody2D" unique_id=780828187]
+script = ExtResource("1_d0uvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=375156005]
+position = Vector2(415, -65.99999)
+scale = Vector2(0.601, 0.601)
+texture = ExtResource("1_6sfst")
+
+[node name="Zamek1" parent="Sprite2D" unique_id=1575885070 instance=ExtResource("2_pinn1")]
+
+[node name="Zamek2" parent="Sprite2D" unique_id=1947323647 instance=ExtResource("3_d0uvg")]
+
+[node name="Zamek3" parent="Sprite2D" unique_id=712200709 instance=ExtResource("4_286a5")]
+
+[node name="InteractionObjectArea" parent="Sprite2D" unique_id=1251555229 instance=ExtResource("6_286a5")]
+position = Vector2(-690.51575, 109.81697)
+scale = Vector2(3, 3)
+metadata/interaction_type = "ENTER"
+
+[connection signal="interacted_with" from="Sprite2D/InteractionObjectArea" to="." method="_on_interaction_object_area_interacted_with"]

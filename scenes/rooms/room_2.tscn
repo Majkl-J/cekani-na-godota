@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://dx5jk3t3ntwn8" path="res://code/scene.gd" id="1_ix842"]
 [ext_resource type="Texture2D" uid="uid://dfia1n2x4j5lx" path="res://icons/2.scena.png" id="2_km8ef"]
 [ext_resource type="Texture2D" uid="uid://cagarhvj36yvy" path="res://icons/Kytky foreground.png" id="3_0hwry"]
+[ext_resource type="PackedScene" uid="uid://dflk0b0tkqd61" path="res://exit.tscn" id="3_ix842"]
 [ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="3_sbn3u"]
 [ext_resource type="PackedScene" uid="uid://ba5pduenjl2er" path="res://mobs/kytka_1.tscn" id="4_0hwry"]
 [ext_resource type="Texture2D" uid="uid://bf2klqttagicr" path="res://icons/Skříňka.png" id="5_urnam"]
-[ext_resource type="PackedScene" path="res://mobs/kytka_2.tscn" id="6_0hwry"]
+[ext_resource type="PackedScene" uid="uid://4keleg87n27t" path="res://mobs/kytka_2.tscn" id="6_0hwry"]
 [ext_resource type="Texture2D" uid="uid://xj3lu8174juo" path="res://icons/ramecek.png" id="6_kxor6"]
-[ext_resource type="PackedScene" path="res://mobs/kytka_3.tscn" id="7_tjvhs"]
-[ext_resource type="PackedScene" path="res://mobs/kytka_4.tscn" id="8_np14n"]
-[ext_resource type="Texture2D" uid="uid://bi1cehoryrylx" path="res://icons/Zamek2.png" id="10_q734l"]
+[ext_resource type="PackedScene" uid="uid://nr0ptd30gxi5" path="res://mobs/kytka_3.tscn" id="7_tjvhs"]
+[ext_resource type="PackedScene" uid="uid://mfied50h4o65" path="res://mobs/kytka_4.tscn" id="8_np14n"]
 [ext_resource type="Script" uid="uid://s6i1avf30uxj" path="res://scenes/rooms/kytky.gd" id="10_sbn3u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
@@ -39,6 +39,10 @@ scale = Vector2(2.24, 2.24)
 position = Vector2(0.446417, -0.4464317)
 scale = Vector2(0.2678571, 0.26785716)
 texture = ExtResource("2_km8ef")
+
+[node name="Door" parent="Room" unique_id=780828187 instance=ExtResource("3_ix842")]
+position = Vector2(-185.26785, 27.678572)
+scale = Vector2(0.44642857, 0.44642857)
 
 [node name="chodnik" type="Sprite2D" parent="Room" unique_id=787576506]
 position = Vector2(4.7630497e-06, -5.9870736e-06)
@@ -98,8 +102,3 @@ scale = Vector2(15, 15)
 
 [node name="FlowerPuzzle" type="Node" parent="." unique_id=795790881]
 script = ExtResource("10_sbn3u")
-
-[node name="Zamek1" type="Sprite2D" parent="." unique_id=25934277]
-position = Vector2(-1.0000153, -2.5)
-scale = Vector2(0.6010416, 0.6009259)
-texture = ExtResource("10_q734l")

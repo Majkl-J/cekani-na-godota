@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://4keleg87n27t"]
+[gd_scene format=3 uid="uid://skuos26e673n"]
 
 [ext_resource type="Texture2D" uid="uid://crieda5y1md5n" path="res://icons/Kytky-1.png" id="1_1fwv6"]
 [ext_resource type="Script" uid="uid://d2tx6ur2k683e" path="res://mobs/kytka.gd" id="1_4jg3h"]
 [ext_resource type="Texture2D" uid="uid://8qomd2pea2oh" path="res://icons/Kytky-2.png" id="2_4jg3h"]
 [ext_resource type="Texture2D" uid="uid://cxs8mfcrjyuqt" path="res://icons/Kytky-3.png" id="3_k6re6"]
 [ext_resource type="Texture2D" uid="uid://cyxgramwqa8vg" path="res://icons/Kytky-4.png" id="4_m36ra"]
+[ext_resource type="Texture2D" uid="uid://cq7yxt7ct8mp6" path="res://icons/Ečko.png" id="6_k6re6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4jg3h"]
 animations = [{
@@ -60,6 +61,13 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1153185260]
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_dsb53")
+
+[node name="HintSprite" type="Sprite2D" parent="." unique_id=342281354]
+visible = false
+z_index = 100
+position = Vector2(0.57128906, -9.430664)
+scale = Vector2(0.001, 0.001)
+texture = ExtResource("6_k6re6")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://u8n5a1vs1fyg" path="res://icons/Tiles_.png" id="4_ow1e4"]
 [ext_resource type="Texture2D" uid="uid://cb2l8u055g6uj" path="res://icons/Hodiny.png" id="6_wtcj1"]
 [ext_resource type="Texture2D" uid="uid://dmfcr2xt3olbv" path="res://icons/Budík.png" id="7_38fm3"]
+[ext_resource type="Texture2D" uid="uid://p5hq0w07vt0g" path="res://icons/Hodiny_glow.png" id="8_ow1e4"]
 [ext_resource type="Texture2D" uid="uid://cwu3ou38kto4y" path="res://icons/Zamek1.png" id="8_y5lrh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_td60s"]
@@ -78,6 +79,11 @@ texture = ExtResource("7_38fm3")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Room" unique_id=503732223]
 color = Color(0.026220527, 0.17900863, 0.4674787, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Room" unique_id=1209693730]
+position = Vector2(-0.89284784, -4.172325e-07)
+scale = Vector2(0.2673921, 0.26703042)
+texture = ExtResource("8_ow1e4")
 
 [node name="Zamek1" type="Sprite2D" parent="." unique_id=25934277]
 position = Vector2(-1.0000153, -2.5)
